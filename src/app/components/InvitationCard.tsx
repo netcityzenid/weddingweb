@@ -21,7 +21,11 @@ const getQueryParam = (name: string) => {
   return null;
 };
 
-const UndanganContainer = () => {
+interface UndanganContainerProps {
+  onOpenInvitation: () => void;
+}
+
+const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [guestName, setGuestName] = useState<string>("");
 
@@ -42,6 +46,7 @@ const UndanganContainer = () => {
 
   const handleOpenInvitation = () => {
     setIsOpen(true);
+    onOpenInvitation(); // Inform `page.tsx` that the invitation has been opened
   };
 
   return (
