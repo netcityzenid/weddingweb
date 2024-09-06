@@ -47,7 +47,7 @@ const UndanganContainer = () => {
   return (
     <div>
       <motion.div
-        className="fixed left-1/2 inset-0 flex justify-center items-center bg-[#051725] z-50 px-5 overflow-x-hidden overflow-y-hidden" // Absolute positioning agar container menumpuk di atas
+        className="fixed overflow-hidden z-[1000] left-1/2 inset-0 flex justify-center items-center bg-[#051725] px-5 overflow-x-hidden overflow-y-hidden" // Absolute positioning agar container menumpuk di atas
         initial="hidden"
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants}
