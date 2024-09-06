@@ -73,7 +73,7 @@ const UndanganContainer = () => {
           <Image src={couple} alt="" className=" opacity-60"></Image>
         </motion.div>
         <motion.div
-          className="fixed w-screen overflow-x-hidden  right-0 bottom-10 z-[1000]"
+          className="fixed w-screen overflow-x-hidden  right-0 bottom-20 z-[1000]"
           animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         >
           <motion.div
@@ -138,12 +138,12 @@ const UndanganContainer = () => {
           initial={{ opacity: 0, y: -100 }} // Mulai dari atas dan dengan opacity 0
           animate={{ opacity: 1, y: 0 }} // Turun ke posisi aslinya dengan opacity 1
           transition={{ duration: 2, ease: "easeOut" }}
-          className=" fixed z-10 w-screen h-screen left-0 top-0overflow-y-hidden"
+          className=" fixed z-10 w-screen h-screen left-0 top-0 overflow-y-hidden"
         >
           <Image src={couple} alt="" className=" opacity-60"></Image>
         </motion.div>
         <motion.div
-          className="fixed w-screen overflow-x-hidden left-0 bottom-10 z-[1000]"
+          className="fixed w-screen overflow-x-hidden left-0 bottom-20 z-[1000]"
           animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         >
           <motion.div
