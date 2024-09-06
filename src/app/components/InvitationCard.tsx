@@ -7,11 +7,11 @@ const UndanganContainer = () => {
   // Variants untuk animasi keluar undangan container
   const containerVariants = {
     hidden: { y: 0, opacity: 1 }, // Posisi awal
-    exit: { x: 1000, opacity: 1, transition: { duration: 5 } }, // Naik ke atas dan menghilang
+    exit: { x: 1000, opacity: 1, transition: { duration: 10 } }, // Naik ke atas dan menghilang
   };
   const containerVariants1 = {
     hidden: { y: 0, opacity: 1 }, // Posisi awal
-    exit: { x: -1000, opacity: 1, transition: { duration: 5 } }, // Naik ke atas dan menghilang
+    exit: { x: -1000, opacity: 1, transition: { duration: 10 } }, // Naik ke atas dan menghilang
   };
 
   const handleOpenInvitation = () => {
@@ -29,7 +29,6 @@ const UndanganContainer = () => {
         <motion.div
           className="fixed w-screen overflow-x-hidden right-[0%]"
           animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
-          variants={containerVariants}
         >
           <div className="p-8 rounded-lg justify-center mx-auto text-center ">
             <div className="mb-5">
@@ -66,7 +65,6 @@ const UndanganContainer = () => {
         <motion.div
           className="fixed w-screen overflow-x-hidden left-0"
           animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
-          variants={containerVariants1}
         >
           <div className="p-8 rounded-lg justify-center mx-auto text-center ">
             <div className="mb-5">
