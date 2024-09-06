@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sacramento&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -25,5 +25,81 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.rotate-animation {
+  animation: rotate 10s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+.rotate-animation2 {
+  animation: rotate 6s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+.rotate-animation3 {
+  animation: rotate 5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+.rotate-animation4 {
+  animation: rotate 7s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+.rotate-animation5 {
+  animation: rotate 8s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
   }
 }

@@ -1,10 +1,34 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import couple from "../../../public/images/couple.jpeg";
+import couple from "../../../public/images/couples.png";
+import layer1 from "../../../public/images/layer1.png";
+import layer2 from "../../../public/images/layer2.png";
+import layer3 from "../../../public/images/layer3.png";
+import layer4 from "../../../public/images/layer4.png";
+import layer5 from "../../../public/images/layer5.png";
+import layer1s from "../../../public/images/layer-1s.png";
+import layer2s from "../../../public/images/layer-2s.png";
+import layer3s from "../../../public/images/layer-3s.png";
+import layer4s from "../../../public/images/layer-4s.png";
+import layer5s from "../../../public/images/layer-5s.png";
+
+const getQueryParam = (name: string) => {
+  if (typeof window !== "undefined") {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+  return null;
+};
 
 const UndanganContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [guestName, setGuestName] = useState<string>("");
+
+  useEffect(() => {
+    const name = getQueryParam("inv");
+    setGuestName(name ? decodeURIComponent(name) : "");
+  }, []);
 
   // Variants untuk animasi keluar undangan container
   const containerVariants = {
@@ -28,24 +52,54 @@ const UndanganContainer = () => {
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants}
       >
-        <div className=" fixed z-10 w-screen h-screen right-0 -top-56 overflow-y-hidden">
-          <Image src={couple} alt="" className=" opacity-70"></Image>
-        </div>
-        <div className=" fixed z-10 w-screen h-screen left-0 overflow-y-hidden bg-gradient-to-b from-[#05172500] via-[#051725] to-[#051725] top-10">
-          <Image src={couple} alt="" className=" opacity-0 "></Image>
-        </div>
         <motion.div
-          className="fixed w-screen overflow-x-hidden z-50 right-0 bottom-10"
+          initial={{ opacity: 0, y: 100, x: 100 }} // Mulai dari atas dan dengan opacity 0
+          animate={{ opacity: 1, y: 0, x: 0 }} // Turun ke posisi aslinya dengan opacity 1
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="absolute  z-[100]  bottom-0"
+        >
+          <Image src={layer1} alt="" className="absolute bottom-0  rotate-animation"></Image>
+          <Image src={layer2} alt="" className="absolute bottom-0 rotate-animation2 z-50"></Image>
+          <Image src={layer3} alt="" className="absolute bottom-0 rotate-animation3"></Image>
+          <Image src={layer4} alt="" className="absolute bottom-0 rotate-animation4"></Image>
+          <Image src={layer5} alt="" className="relative -bottom-2 -right-2 rotate-animation5"></Image>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -100 }} // Mulai dari atas dan dengan opacity 0
+          animate={{ opacity: 1, y: 0 }} // Turun ke posisi aslinya dengan opacity 1
+          transition={{ duration: 2, ease: "easeOut" }}
+          className=" fixed z-10 w-screen h-screen right-0 top-0overflow-y-hidden"
+        >
+          <Image src={couple} alt="" className=" opacity-60"></Image>
+        </motion.div>
+        <motion.div
+          className="fixed w-screen overflow-x-hidden  right-0 bottom-10 z-[1000]"
           animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         >
-          <div className="p-8 rounded-lg justify-center mx-auto text-center  relative z-50">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }} // Mulai dari atas dan dengan opacity 0
+            animate={{ opacity: 1, y: 0 }} // Turun ke posisi aslinya dengan opacity 1
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="p-8 rounded-lg justify-center mx-auto text-center  relative z-50"
+          >
             <div className="mb-5">
               <p className="text-white/50 mb-8 uppercase">The Wedding of</p>
-              <h1 className="text-5xl font-mono mb-8 ">Afni & Galang</h1>
-              <p className="mb-2">Kepada Bapak/Ibu/Saudara/i</p>
-              <p className=" text-xl font-semibold">Nama Tamu</p>
+              <motion.h1
+                initial={{ opacity: 0, y: 100 }} // Mulai dari atas dan dengan opacity 0
+                animate={{ opacity: 1, y: 0 }} // Turun ke posisi aslinya dengan opacity 1
+                transition={{ duration: 2, ease: "easeOut" }}
+                className="text-5xl text-white font-mono mb-8 "
+              >
+                Afni & Galang
+              </motion.h1>
+              <p className="mb-2 text-white">Kepada Bapak/Ibu/Saudara/i</p>
+              <p className="text-white text-xl font-semibold">{guestName || ""}</p>
             </div>
-            <motion.button onClick={handleOpenInvitation} className="bg-gradient-to-b from-[#d6b064] to-[#a78541] shadow-lg justify-center mx-auto flex gap-2 text-black py-2 px-5 rounded-full  transition duration-300">
+            <motion.button
+              onClick={handleOpenInvitation}
+              className="relative bg-gradient-to-b from-[#d6b064] to-[#a78541] shadow-lg justify-center mx-auto flex gap-2 text-black py-2 px-5 rounded-full transition duration-300 overflow-hidden"
+            >
+              {/* SVG Icon */}
               <span>
                 <svg className="h-4 w-auto" fill="#000000" width="64px" height="64px" viewBox="0 0 56.00 56.00" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00056">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -55,9 +109,23 @@ const UndanganContainer = () => {
                   </g>
                 </svg>
               </span>
+
               <span className="text-sm">Buka Undangan</span>
+
+              {/* Shiny Effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-50"
+                initial={{ left: "-400%" }}
+                animate={{ left: "100%" }}
+                transition={{
+                  duration: 2,
+                  ease: "linear",
+                  repeat: Infinity,
+                }}
+                style={{ width: "150%", height: "100%" }}
+              />
             </motion.button>
-          </div>
+          </motion.div>
         </motion.div>
       </motion.div>
       <motion.div
@@ -66,24 +134,42 @@ const UndanganContainer = () => {
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants1}
       >
-        <div className=" fixed z-10 w-screen h-screen left-0 -top-56 overflow-y-hidden">
-          <Image src={couple} alt="" className=" opacity-70"></Image>
-        </div>
-        <div className=" fixed z-10 w-screen h-screen left-0 overflow-y-hidden bg-gradient-to-b from-[#05172500] via-[#051725] to-[#051725] top-10">
-          <Image src={couple} alt="" className=" opacity-0 "></Image>
-        </div>
         <motion.div
-          className="fixed w-screen overflow-x-hidden left-0 bottom-10 z-50"
+          initial={{ opacity: 0, y: -100 }} // Mulai dari atas dan dengan opacity 0
+          animate={{ opacity: 1, y: 0 }} // Turun ke posisi aslinya dengan opacity 1
+          transition={{ duration: 2, ease: "easeOut" }}
+          className=" fixed z-10 w-screen h-screen left-0 top-0overflow-y-hidden"
+        >
+          <Image src={couple} alt="" className=" opacity-60"></Image>
+        </motion.div>
+        <motion.div
+          className="fixed w-screen overflow-x-hidden left-0 bottom-10 z-[1000]"
           animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         >
-          <div className="p-8 rounded-lg justify-center mx-auto text-center ">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }} // Mulai dari atas dan dengan opacity 0
+            animate={{ opacity: 1, y: 0 }} // Turun ke posisi aslinya dengan opacity 1
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="p-8 rounded-lg justify-center mx-auto text-center "
+          >
             <div className="mb-5">
               <p className="text-white/50 mb-8 uppercase">The Wedding of</p>
-              <h1 className="text-5xl font-mono mb-8">Afni & Galang</h1>
-              <p className="mb-2">Kepada Bapak/Ibu/Saudara/i</p>
-              <p className=" text-xl font-semibold">Nama Tamu</p>
+              <motion.h1
+                initial={{ opacity: 0, y: 100 }} // Mulai dari atas dan dengan opacity 0
+                animate={{ opacity: 1, y: 0 }} // Turun ke posisi aslinya dengan opacity 1
+                transition={{ duration: 2, ease: "easeOut" }}
+                className="text-5xl text-white font-mono mb-8"
+              >
+                Afni & Galang
+              </motion.h1>
+              <p className="mb-2 text-white">Kepada Bapak/Ibu/Saudara/i</p>
+              <p className="text-white text-xl font-semibold">{guestName || ""}</p>
             </div>
-            <motion.button onClick={handleOpenInvitation} className="bg-gradient-to-b from-[#d6b064] to-[#a78541]  shadow-lg justify-center mx-auto flex gap-2 text-black py-2 px-5 rounded-full transition duration-300">
+            <motion.button
+              onClick={handleOpenInvitation}
+              className="relative bg-gradient-to-b from-[#d6b064] to-[#a78541] shadow-lg justify-center mx-auto flex gap-2 text-black py-2 px-5 rounded-full transition duration-300 overflow-hidden"
+            >
+              {/* SVG Icon */}
               <span>
                 <svg className="h-4 w-auto" fill="#000000" width="64px" height="64px" viewBox="0 0 56.00 56.00" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00056">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -93,9 +179,35 @@ const UndanganContainer = () => {
                   </g>
                 </svg>
               </span>
+
               <span className="text-sm">Buka Undangan</span>
+
+              {/* Shiny Effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-50"
+                initial={{ left: "-400%" }}
+                animate={{ left: "100%" }}
+                transition={{
+                  duration: 2,
+                  ease: "linear",
+                  repeat: Infinity,
+                }}
+                style={{ width: "150%", height: "100%" }}
+              />
             </motion.button>
-          </div>
+          </motion.div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 100, x: -100 }} // Mulai dari atas dan dengan opacity 0
+          animate={{ opacity: 1, y: 0, x: 0 }} // Turun ke posisi aslinya dengan opacity 1
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="absolute  z-[100]  bottom-0"
+        >
+          <Image src={layer1s} alt="" className="absolute bottom-0 rotate-animation5 z-50"></Image>
+          <Image src={layer2s} alt="" className="absolute bottom-0 rotate-animation4"></Image>
+          <Image src={layer3s} alt="" className="absolute bottom-0 rotate-animation3"></Image>
+          <Image src={layer4s} alt="" className="absolute bottom-0 rotate-animation2"></Image>
+          <Image src={layer5s} alt="" className="relative -bottom-2 -right-2 rotate-animation"></Image>
         </motion.div>
       </motion.div>
     </div>
