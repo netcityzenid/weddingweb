@@ -23,15 +23,15 @@ const UndanganContainer = () => {
   return (
     <div>
       <motion.div
-        className="fixed left-1/2 inset-0 flex justify-center items-center bg-[#051725] z-50 px-5 overflow-x-hidden" // Absolute positioning agar container menumpuk di atas
+        className="fixed left-1/2 inset-0 flex justify-center items-center bg-[#051725] z-50 px-5 overflow-x-hidden overflow-y-hidden" // Absolute positioning agar container menumpuk di atas
         initial="hidden"
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants}
       >
-        <div className=" fixed z-10 w-screen h-screen right-0 -top-44 overflow-y-hidden">
-          <Image src={couple} alt="" className=""></Image>
+        <div className=" fixed z-10 w-screen h-screen right-0 -top-56 overflow-y-hidden">
+          <Image src={couple} alt="" className=" opacity-70"></Image>
         </div>
-        <div className=" fixed z-10 w-screen h-screen left-0 overflow-y-hidden bg-gradient-to-b from-[#0517256a] via-[#051725] to-[#051725]">
+        <div className=" fixed z-10 w-screen h-screen left-0 overflow-y-hidden bg-gradient-to-b from-[#05172500] via-[#051725] to-[#051725] top-10">
           <Image src={couple} alt="" className=" opacity-0 "></Image>
         </div>
         <motion.div
@@ -61,15 +61,15 @@ const UndanganContainer = () => {
         </motion.div>
       </motion.div>
       <motion.div
-        className="fixed right-1/2 inset-0 flex justify-center items-center bg-[#051725] z-50 px-5 overflow-x-hidden" // Absolute positioning agar container menumpuk di atas
+        className="fixed right-1/2 inset-0 flex justify-center items-center bg-[#051725] z-50 px-5 overflow-x-hidden overflow-y-hidden" // Absolute positioning agar container menumpuk di atas
         initial="hidden"
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants1}
       >
-        <div className=" fixed z-10 w-screen h-screen left-0 -top-44 overflow-y-hidden">
-          <Image src={couple} alt="" className="  "></Image>
+        <div className=" fixed z-10 w-screen h-screen left-0 -top-56 overflow-y-hidden">
+          <Image src={couple} alt="" className=" opacity-70"></Image>
         </div>
-        <div className=" fixed z-10 w-screen h-screen left-0 overflow-y-hidden bg-gradient-to-b from-[#0517256a] via-[#051725] to-[#051725]">
+        <div className=" fixed z-10 w-screen h-screen left-0 overflow-y-hidden bg-gradient-to-b from-[#05172500] via-[#051725] to-[#051725] top-10">
           <Image src={couple} alt="" className=" opacity-0 "></Image>
         </div>
         <motion.div
