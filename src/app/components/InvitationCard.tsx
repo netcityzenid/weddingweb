@@ -68,7 +68,7 @@ const UndanganContainer = () => {
           initial={{ opacity: 0, y: -100 }} // Mulai dari atas dan dengan opacity 0
           animate={{ opacity: 1, y: 0 }} // Turun ke posisi aslinya dengan opacity 1
           transition={{ duration: 2, ease: "easeOut" }}
-          className=" fixed z-10 w-screen h-screen right-0 top-0overflow-y-hidden"
+          className=" fixed z-10 w-screen h-screen right-0 top-0 overflow-y-hidden"
         >
           <Image src={couple} alt="" className=" opacity-60"></Image>
         </motion.div>
