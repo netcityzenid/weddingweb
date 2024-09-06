@@ -28,7 +28,7 @@ const UndanganContainer = () => {
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants}
       >
-        <div className=" fixed z-10 w-screen h-screen right-0 -top-44 overflow-y-hidden">
+        <div className=" fixed z-10 w-screen h-screen right-0  overflow-y-hidden">
           <Image src={couple} alt="" className="  "></Image>
         </div>
         <div className=" fixed z-10 w-screen h-screen left-0 overflow-y-hidden bg-gradient-to-b from-[#0517256a] via-[#051725] to-[#051725]">
@@ -66,7 +66,7 @@ const UndanganContainer = () => {
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants1}
       >
-        <div className=" fixed z-10 w-screen h-screen left-0 -top-44 overflow-y-hidden">
+        <div className=" fixed z-10 w-screen h-screen left-0 overflow-y-hidden">
           <Image src={couple} alt="" className="  "></Image>
         </div>
         <div className=" fixed z-10 w-screen h-screen left-0 overflow-y-hidden bg-gradient-to-b from-[#0517256a] via-[#051725] to-[#051725]">
