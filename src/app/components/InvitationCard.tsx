@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
+import couple from "../../../public/images/couple.jpeg";
 
 const UndanganContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,24 +28,26 @@ const UndanganContainer = () => {
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants}
       >
+        <div className=" fixed z-10 w-screen h-screen right-0 -top-44 overflow-y-hidden">
+          <Image src={couple} alt="" className="  "></Image>
+        </div>
+        <div className=" fixed z-10 w-screen h-screen left-0 overflow-y-hidden bg-gradient-to-b from-[#0517256a] via-[#051725] to-[#051725]">
+          <Image src={couple} alt="" className=" opacity-0 "></Image>
+        </div>
         <motion.div
-          className="fixed w-screen overflow-x-hidden right-[0%]"
+          className="fixed w-screen overflow-x-hidden z-50 right-0 bottom-10"
           animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         >
-          <div className="p-8 rounded-lg justify-center mx-auto text-center ">
+          <div className="p-8 rounded-lg justify-center mx-auto text-center  relative z-50">
             <div className="mb-5">
-              <p className="text-white/80 mb-8 uppercase">The Wedding of</p>
-              <h1 className="text-5xl font-mono mb-8">Afni & Galang</h1>
+              <p className="text-white/50 mb-8 uppercase">The Wedding of</p>
+              <h1 className="text-5xl font-mono mb-8 ">Afni & Galang</h1>
               <p className="mb-2">Kepada Bapak/Ibu/Saudara/i</p>
               <p className=" text-xl font-semibold">Nama Tamu</p>
             </div>
-            <motion.button
-              onClick={handleOpenInvitation}
-              className="bg-[#d6b064] shadow-lg justify-center mx-auto flex gap-3 text-black py-3 px-6 rounded-full  transition duration-300"
-             
-            >
+            <motion.button onClick={handleOpenInvitation} className="bg-gradient-to-b from-[#d6b064] to-[#a78541] shadow-lg justify-center mx-auto flex gap-2 text-black py-2 px-5 rounded-full  transition duration-300">
               <span>
-                <svg className="h-5 w-auto" fill="#000000" width="64px" height="64px" viewBox="0 0 56.00 56.00" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00056">
+                <svg className="h-4 w-auto" fill="#000000" width="64px" height="64px" viewBox="0 0 56.00 56.00" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00056">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                   <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.8960000000000001"></g>
                   <g id="SVGRepo_iconCarrier">
@@ -51,7 +55,7 @@ const UndanganContainer = () => {
                   </g>
                 </svg>
               </span>
-              <span>Buka Undangan</span>
+              <span className="text-sm">Buka Undangan</span>
             </motion.button>
           </div>
         </motion.div>
@@ -62,24 +66,26 @@ const UndanganContainer = () => {
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants1}
       >
+        <div className=" fixed z-10 w-screen h-screen left-0 -top-44 overflow-y-hidden">
+          <Image src={couple} alt="" className="  "></Image>
+        </div>
+        <div className=" fixed z-10 w-screen h-screen left-0 overflow-y-hidden bg-gradient-to-b from-[#0517256a] via-[#051725] to-[#051725]">
+          <Image src={couple} alt="" className=" opacity-0 "></Image>
+        </div>
         <motion.div
-          className="fixed w-screen overflow-x-hidden left-0"
+          className="fixed w-screen overflow-x-hidden left-0 bottom-10 z-50"
           animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         >
           <div className="p-8 rounded-lg justify-center mx-auto text-center ">
             <div className="mb-5">
-              <p className="text-white/80 mb-8 uppercase">The Wedding of</p>
+              <p className="text-white/50 mb-8 uppercase">The Wedding of</p>
               <h1 className="text-5xl font-mono mb-8">Afni & Galang</h1>
               <p className="mb-2">Kepada Bapak/Ibu/Saudara/i</p>
               <p className=" text-xl font-semibold">Nama Tamu</p>
             </div>
-            <motion.button
-              onClick={handleOpenInvitation}
-              className="bg-[#d6b064] shadow-lg justify-center mx-auto flex gap-3 text-black py-3 px-6 rounded-full transition duration-300"
-              
-            >
+            <motion.button onClick={handleOpenInvitation} className="bg-gradient-to-b from-[#d6b064] to-[#a78541]  shadow-lg justify-center mx-auto flex gap-2 text-black py-2 px-5 rounded-full transition duration-300">
               <span>
-                <svg className="h-5 w-auto" fill="#000000" width="64px" height="64px" viewBox="0 0 56.00 56.00" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00056">
+                <svg className="h-4 w-auto" fill="#000000" width="64px" height="64px" viewBox="0 0 56.00 56.00" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00056">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                   <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.8960000000000001"></g>
                   <g id="SVGRepo_iconCarrier">
@@ -87,7 +93,7 @@ const UndanganContainer = () => {
                   </g>
                 </svg>
               </span>
-              <span>Buka Undangan</span>
+              <span className="text-sm">Buka Undangan</span>
             </motion.button>
           </div>
         </motion.div>
