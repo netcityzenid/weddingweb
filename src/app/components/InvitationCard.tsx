@@ -56,13 +56,13 @@ const UndanganContainer = () => {
           initial={{ opacity: 0, y: 100, x: 100 }} // Mulai dari atas dan dengan opacity 0
           animate={{ opacity: 1, y: 0, x: 0 }} // Turun ke posisi aslinya dengan opacity 1
           transition={{ duration: 1, ease: "easeOut" }}
-          className="absolute  z-[100]  bottom-0"
+          className="absolute  z-[100]  bottom-0 "
         >
-          <Image src={layer1} alt="" className="absolute bottom-0  rotate-animation"></Image>
-          <Image src={layer2} alt="" className="absolute bottom-0 rotate-animation2 z-50"></Image>
-          <Image src={layer3} alt="" className="absolute bottom-0 rotate-animation3"></Image>
-          <Image src={layer4} alt="" className="absolute bottom-0 rotate-animation4"></Image>
-          <Image src={layer5} alt="" className="relative -bottom-2 -right-2 rotate-animation5"></Image>
+          <Image src={layer1} alt="" className="absolute -bottom-5 -right-5 rotate-animation"></Image>
+          <Image src={layer2} alt="" className="absolute -bottom-5 -right-5 rotate-animation2 z-50"></Image>
+          <Image src={layer3} alt="" className="absolute -bottom-5 -right-5 rotate-animation3"></Image>
+          <Image src={layer4} alt="" className="absolute -bottom-5 -right-5 rotate-animation4"></Image>
+          <Image src={layer5} alt="" className="relative -bottom-5 -right-2 rotate-animation5"></Image>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -100 }} // Mulai dari atas dan dengan opacity 0
@@ -203,11 +203,11 @@ const UndanganContainer = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="absolute  z-[100]  bottom-0"
         >
-          <Image src={layer1s} alt="" className="absolute bottom-0 rotate-animation5 z-50"></Image>
-          <Image src={layer2s} alt="" className="absolute bottom-0 rotate-animation4"></Image>
-          <Image src={layer3s} alt="" className="absolute bottom-0 rotate-animation3"></Image>
-          <Image src={layer4s} alt="" className="absolute bottom-0 rotate-animation2"></Image>
-          <Image src={layer5s} alt="" className="relative -bottom-2 -right-2 rotate-animation"></Image>
+          <Image src={layer1s} alt="" className="absolute -bottom-5 -left-5 rotate-animation5 z-50"></Image>
+          <Image src={layer2s} alt="" className="absolute -bottom-5 -left-5 rotate-animation4"></Image>
+          <Image src={layer3s} alt="" className="absolute -bottom-5 -left-5 rotate-animation3"></Image>
+          <Image src={layer4s} alt="" className="absolute -bottom-5 -left-5 rotate-animation2"></Image>
+          <Image src={layer5s} alt="" className="relative -bottom-2 -left-2 rotate-animation"></Image>
         </motion.div>
       </motion.div>
     </div>
