@@ -10,7 +10,7 @@ const config: Config = {
       },
 
       fontFamily: {
-        mono: ["Sacramento"],
+        sacramento: ["Sacramento"],
         sans: ["Outfit"],
       },
     },
