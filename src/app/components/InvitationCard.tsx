@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import couple from "../../../public/images/couples.png";
+import couple from "../../../public/images/couple.jpg";
 import layer1 from "../../../public/images/layer1.png";
 import layer2 from "../../../public/images/layer2.png";
 import layer3 from "../../../public/images/layer3.png";
@@ -52,7 +52,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
   return (
     <div>
       <motion.div
-        className="fixed overflow-hidden z-[1000] left-1/2 inset-0 flex justify-center items-center bg-[#051725] px-5 overflow-x-hidden overflow-y-hidden" // Absolute positioning agar container menumpuk di atas
+        className="fixed overflow-hidden z-[1000] left-1/2 inset-0 flex justify-center items-center bg-[#000000] px-5 overflow-x-hidden overflow-y-hidden" // Absolute positioning agar container menumpuk di atas
         initial="hidden"
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants}
@@ -75,10 +75,15 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
           transition={{ duration: 2, ease: "easeOut" }}
           className=" fixed z-10 w-screen h-screen right-0 top-0 overflow-y-hidden"
         >
-          <Image src={couple} alt="" className=" opacity-60"></Image>
+          <div className="relative opacity-100">
+            <div className="bg-gradient-to-t from-black to-transparent h-3/4 absolute bottom-0">
+              <Image src={couple} alt="" className=" top-0 opacity-0 z-100"></Image>
+            </div>
+            <Image src={couple} alt="" className=" opacity-100 "></Image>
+          </div>
         </motion.div>
         <motion.div
-          className="fixed w-screen overflow-x-hidden  right-0 bottom-20 z-[1000]"
+          className="fixed w-screen overflow-x-hidden  right-0 bottom-16 z-[1000]"
           animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         >
           <motion.div
@@ -134,7 +139,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
         </motion.div>
       </motion.div>
       <motion.div
-        className="fixed right-1/2 inset-0 flex justify-center items-center bg-[#051725] z-50 px-5 overflow-x-hidden overflow-y-hidden" // Absolute positioning agar container menumpuk di atas
+        className="fixed right-1/2 inset-0 flex justify-center items-center bg-[#000000] z-50 px-5 overflow-x-hidden overflow-y-hidden" // Absolute positioning agar container menumpuk di atas
         initial="hidden"
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants1}
@@ -145,10 +150,15 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
           transition={{ duration: 2, ease: "easeOut" }}
           className=" fixed z-10 w-screen h-screen left-0 top-0 overflow-y-hidden"
         >
-          <Image src={couple} alt="" className=" opacity-60"></Image>
+          <div className="relative opacity-100">
+            <div className=" bg-gradient-to-t from-black to-transparent  h-3/4 absolute bottom-0">
+              <Image src={couple} alt="" className=" top-0 opacity-0  z-100"></Image>
+            </div>
+            <Image src={couple} alt="" className=" opacity-100 "></Image>
+          </div>
         </motion.div>
         <motion.div
-          className="fixed w-screen overflow-x-hidden left-0 bottom-20 z-[1000]"
+          className="fixed w-screen overflow-x-hidden left-0 bottom-16 z-[1000]"
           animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         >
           <motion.div
