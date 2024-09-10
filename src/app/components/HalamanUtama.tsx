@@ -9,7 +9,6 @@ import hand from "../../../public/images/hand.png";
 import bl from "../../../public/images/BL.png";
 import br from "../../../public/images/BR.png";
 import topright from "../../../public/images/top-right.png";
-import topleft from "../../../public/images/top-left.png";
 import goldleaf from "../../../public/images/goldleaf.png";
 import FallingLeaves from "./FallingLeaf";
 import MyGallery from "./Gallery";

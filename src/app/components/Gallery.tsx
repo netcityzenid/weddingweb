@@ -1,6 +1,6 @@
 // components/Gallery.tsx
 import React from "react";
-import Gallery, { PhotoProps } from "react-photo-gallery";
+import Gallery from "react-photo-gallery";
 
 interface Photo {
   src: string;
