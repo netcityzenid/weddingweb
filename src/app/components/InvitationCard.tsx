@@ -98,7 +98,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
                 initial={{ opacity: 0, y: 100 }} // Mulai dari atas dan dengan opacity 0
                 animate={{ opacity: 1, y: 0 }} // Turun ke posisi aslinya dengan opacity 1
                 transition={{ duration: 2, ease: "easeOut" }}
-                className="text-5xl text-white font-sacramento mb-8 "
+                className="text-5xl text-white font-custom mb-8 "
               >
                 Afni & Galang
               </motion.h1>
@@ -173,7 +173,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
                 initial={{ opacity: 0, y: 100 }} // Mulai dari atas dan dengan opacity 0
                 animate={{ opacity: 1, y: 0 }} // Turun ke posisi aslinya dengan opacity 1
                 transition={{ duration: 2, ease: "easeOut" }}
-                className="text-5xl text-white font-sacramento mb-8"
+                className="text-5xl text-white font-custom mb-8"
               >
                 Afni & Galang
               </motion.h1>

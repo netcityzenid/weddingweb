@@ -11,7 +11,8 @@ const config: Config = {
 
       fontFamily: {
         sacramento: ["Sacramento"],
-        sans: ["Outfit"],
+        sans: ["Raleway"],
+        serif: ["Raleway"],
       },
     },
   },
