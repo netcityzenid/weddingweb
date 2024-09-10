@@ -3,16 +3,21 @@ import React, { useState } from "react";
 import TinderCard from "react-tinder-card";
 
 const initialCards = [
-  { id: 1, url: "/images/IMG_3835.jpg" },
-  { id: 2, url: "/images/IMG_3838.jpg" },
-  { id: 3, url: "/images/IMG_3854.jpg" },
-  { id: 4, url: "/images/IMG_3860.jpg" },
-  { id: 5, url: "/images/IMG_3865.jpg" },
-  { id: 6, url: "/images/IMG_3899.jpg" },
-  { id: 7, url: "/images/IMG_3901.jpg" },
-  { id: 8, url: "/images/IMG_3909.jpg" },
-  { id: 9, url: "/images/IMG_3911.jpg" },
-  { id: 10, url: "/images/IMG_3925.jpg" },
+  { id: 1, url: "/images/im1.jpg" },
+  { id: 2, url: "/images/im2.jpg" },
+  { id: 3, url: "/images/im3.jpg" },
+  { id: 4, url: "/images/im4.jpg" },
+  { id: 5, url: "/images/im5.jpg" },
+  { id: 6, url: "/images/im6.jpg" },
+  { id: 7, url: "/images/im7.jpg" },
+  { id: 8, url: "/images/im8.jpg" },
+  { id: 9, url: "/images/im9.jpg" },
+  { id: 10, url: "/images/im10.jpg" },
+  { id: 11, url: "/images/im11.jpg" },
+  { id: 12, url: "/images/im12.jpg" },
+  { id: 13, url: "/images/im13.jpg" },
+  { id: 14, url: "/images/im14.jpg" },
+  { id: 15, url: "/images/im15.jpg" },
 ];
 
 const SwipeCard: React.FC = () => {
@@ -37,8 +42,8 @@ const SwipeCard: React.FC = () => {
 
   return (
     <div className="relative flex justify-center pt-5 min-h-screen">
-      {cards.map((card, index) => (
-        <TinderCard key={card.id} onSwipe={(dir) => swiped(dir, card.id)} onCardLeftScreen={() => outOfFrame(card.id)} preventSwipe={["up", "down"]}>
+      {cards.slice(0, currentIndex + 1).map((card, index) => (
+        <TinderCard key={card.id} onSwipe={(dir) => swiped(dir, card.id)} onCardLeftScreen={() => outOfFrame(card.id)} preventSwipe={index === cards.length - 1 ? [] : ["up", "down"]}>
           <div
             className="border-2 border-[#000]"
             style={{
@@ -57,6 +62,27 @@ const SwipeCard: React.FC = () => {
           />
         </TinderCard>
       ))}
+
+      {/* Gambar terakhir sebagai penanda */}
+      {currentIndex < 1 && (
+        <div
+          className="border-2 border-[#000]"
+          style={{
+            width: "300px",
+            height: "400px",
+            backgroundImage: `url(${cards[cards.length - 15].url})`, // Gambar terakhir
+            backgroundSize: "cover",
+            borderRadius: "10px",
+            position: "absolute",
+            top: "0%", // Posisi atas dari gambar
+            left: "50%",
+            transform: `translate(-50%, 0)`,
+            zIndex: 0,
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Menambahkan bayangan
+            opacity: 1, // Memberi efek transparansi jika diinginkan
+          }}
+        />
+      )}
     </div>
   );
 };
