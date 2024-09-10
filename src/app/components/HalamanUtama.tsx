@@ -12,6 +12,7 @@ import topright from "../../../public/images/top-right.png";
 import goldleaf from "../../../public/images/goldleaf.png";
 import FallingLeaves from "./FallingLeaf";
 import SwipeCard from "./CardStack";
+import im15 from "../../../public/images/im15.jpg";
 interface HalamanUtamaProps {
   className?: string; // Izinkan properti className
 }
@@ -144,10 +145,12 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           <p className="text-5xl font-custom text-[#d6b064]"> Our Gallery</p>
         </div>
         <div className=" relative flex justify-center items-center overflow-x-hidden">
-          <div className="  top-0 rounded-xl absolute  text-white" style={{ left: "50%", top: "20%", transform: "translate(-50%, -50%)" }} >Sudah habis :{")"}</div>
+          <div className="absolute w-[300px] h-[400px] top-5 rounded-xl overflow-hidden">
+            <Image src={im15} alt="" className="-top-10 absolute"></Image>
+          </div>
           <SwipeCard />
         </div>
-        <div className="text-white bg-[#0a0a0a] -mt-60 h-screen relative z-[1000]">test</div>
+        <div className="text-white bg-[#0a0a0a] -mt-60 h-screen relative">test</div>
       </div>
     </div>
   );
