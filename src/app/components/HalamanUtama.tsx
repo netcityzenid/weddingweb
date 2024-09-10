@@ -11,8 +11,7 @@ import br from "../../../public/images/BR.png";
 import topright from "../../../public/images/top-right.png";
 import goldleaf from "../../../public/images/goldleaf.png";
 import FallingLeaves from "./FallingLeaf";
-import MyGallery from "./Gallery";
-
+import SwipeCard from "./CardStack";
 interface HalamanUtamaProps {
   className?: string; // Izinkan properti className
 }
@@ -140,13 +139,15 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           </div>
         </div>
       </div>
-      <div id="section-3" className=" bg-[#0a0a0a] mb-40 px-5">
+      <div id="section-3" className=" bg-[#0a0a0a] px-5 ">
         <div className="text-white text-center mt-20 flex justify-center mb-5">
           <p className="text-5xl font-custom text-[#d6b064]"> Our Gallery</p>
         </div>
-        <div className=" max-h-96 overflow-hidden whitespace-nowrap overflow-y-auto">
-          <MyGallery />
+        <div className=" relative flex justify-center items-center overflow-x-hidden">
+          <div className="  top-0 rounded-xl absolute  text-white" style={{ left: "50%", top: "20%", transform: "translate(-50%, -50%)" }} >Sudah habis :{")"}</div>
+          <SwipeCard />
         </div>
+        <div className="text-white bg-[#0a0a0a] -mt-60 h-screen relative z-[1000]">test</div>
       </div>
     </div>
   );
