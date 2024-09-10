@@ -68,10 +68,11 @@ const SwipeCard: React.FC = () => {
               top: "0%",
               left: "50%",
               transform: `translate(-50%, 0) rotate(${index === currentIndex ? 5 : -5}deg)`,
-              zIndex: index === currentIndex ? 1 : 0,
+              zIndex: index === currentIndex ? 100 : 0, // Naikkan z-index untuk gambar pertama
               boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+              pointerEvents: "auto", // Pastikan event klik aktif
             }}
-            onClick={() => handleImageClick(card.url)} // Tambahkan event handler untuk klik
+            onClick={() => handleImageClick(card.url)}
           ></div>
         </TinderCard>
       ))}

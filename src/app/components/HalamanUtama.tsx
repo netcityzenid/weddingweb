@@ -30,7 +30,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           <FallingLeaves />
           <Image src={couple} alt="couple" className=" rounded-b-[100px] border-b-4 border-[#d6b064]"></Image>
         </div>
-        <div className="text-white px-5 relative z-[1000]">
+        <div className="text-white px-5 relative z-[50]">
           <div className="text-center uppercase text-black/60 mt-5">The wedding of</div>
           <div className="font-custom text-center text-6xl mt-5 text-black leading-none">
             Afni
