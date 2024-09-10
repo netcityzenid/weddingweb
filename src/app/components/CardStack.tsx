@@ -114,7 +114,7 @@ const SwipeCard: React.FC = () => {
           <div className="max-w-[90%] max-h-[90%] relative">
             <img src={previewImageUrl!} alt="Preview" className=" rounded-xl" />
             <div>
-              <svg className="absolute top-2 opacity-60 right-2 h-16 w-auto" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="absolute top-2 opacity-60 right-2 h-10 w-auto" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier">
