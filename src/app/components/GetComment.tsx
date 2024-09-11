@@ -1,3 +1,4 @@
+// app/components/CommentList.tsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -27,10 +28,15 @@ const getRandomColor = () => {
   return COLORS[randomIndex];
 };
 
+const getInitials = (name: string) => {
+  const names = name.split(" ");
+  return (names[0][0] + (names[1] ? names[1][0] : "")).toUpperCase();
+};
+
 const CommentList = () => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [loading, setLoading] = useState(true);
-  
+
   const fetchComments = async () => {
     try {
       const res = await fetch("/api/getComment");
@@ -49,7 +55,10 @@ const CommentList = () => {
 
   useEffect(() => {
     fetchComments();
- // Clear interval on component unmount
+
+    const intervalId = setInterval(fetchComments, 5000); // Update setiap 5 detik
+
+    return () => clearInterval(intervalId); // Clear interval on component unmount
   }, []);
 
   const timeAgo = (timestamp: string) => {
@@ -77,12 +86,12 @@ const CommentList = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <ul className="whitespace-nowrap overflow-y-auto h-96 mt-10 ">
+        <ul className="whitespace-nowrap overflow-y-auto h-96 mt-10">
           {comments.map((comment) => (
             <li key={comment._id} className="bg-white/50 shadow-sm rounded-lg p-4 mb-2 relative overflow-hidden">
               <div className="flex">
                 <div className="h-10 w-10 rounded-full flex items-center justify-center text-center font-medium text-white" style={{ backgroundColor: getRandomColor() }}>
-                  <div className="uppercase">{(comment.name.slice(0,2))}</div>
+                  <div className="uppercase">{getInitials(comment.name)}</div>
                 </div>
                 <div className="ml-2">
                   <div>

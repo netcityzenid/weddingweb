@@ -1,3 +1,4 @@
+// app/components/CommentForm.tsx
 "use client";
 
 import { useState } from "react";
@@ -32,7 +33,7 @@ const CommentForm = ({ onCommentSubmitted }: CommentFormProps) => {
         setName("");
         setComment("");
         setAttendance(undefined);
-        onCommentSubmitted(); // Panggil fungsi setelah data baru berhasil dikirim
+        onCommentSubmitted(); // Panggil fungsi untuk pembaruan komentar
       } else {
         setMessage("Failed to save comment");
       }
@@ -58,7 +59,7 @@ const CommentForm = ({ onCommentSubmitted }: CommentFormProps) => {
               Konfirmasi kehadiran
             </option>
             <option value="true">Hadir</option>
-            <option value="false">Tidak Hadir / Masih ragu</option>
+            <option value="false">Tidak Hadir</option>
           </select>
         </div>
         <button className="w-full shadow-sm rounded-lg font-medium p-2 bg-gradient-to-b from-[#d6b064] to-[#d6b064]" type="submit" disabled={loading}>
