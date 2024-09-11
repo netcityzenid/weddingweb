@@ -75,7 +75,7 @@ const SwipeCard: React.FC = () => {
       {cards.slice(0, currentIndex + 1).map((card, index) => (
         <TinderCard key={card.id} onSwipe={(dir) => swiped(dir, card.id)} onCardLeftScreen={() => outOfFrame(card.id)} preventSwipe={["up", "down"]}>
           <div
-            className="border-2 border-[#000] absolute h-[430px] w-[300px]"
+            className="border-2 border-[#000] absolute h-[430px] w-[300px]" 
             style={{
               backgroundImage: `url(${card.url})`,
               backgroundSize: "cover",
