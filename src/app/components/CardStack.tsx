@@ -68,7 +68,7 @@ const SwipeCard: React.FC = () => {
   const handleClosePreview = () => {
     setIsPreviewOpen(false);
     setPreviewImageUrl(null);
-  };
+  }; 
 
   return (
     <div className="flex flex-col items-center pt-5 h-[500px]  relative top-10 ">
