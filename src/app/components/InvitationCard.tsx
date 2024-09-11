@@ -50,7 +50,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
   };
 
   return (
-    <div>
+    <div className=" relative z-[1000]">
       <motion.div
         className="fixed overflow-hidden z-[1000] left-1/2 inset-0 flex justify-center items-center bg-[#000000] px-5 overflow-x-hidden overflow-y-hidden" // Absolute positioning agar container menumpuk di atas
         initial="hidden"

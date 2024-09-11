@@ -24,6 +24,7 @@ const SwipeCard: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(cards.length - 1);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [previewImageUrl, setPreviewImageUrl] = useState<string | null>(null);
+  const [rotations] = useState(cards.map((_, index) => (index % 2 === 0 ? 5 : -5)));
 
   // Ref to detect if a swipe or a click
   const touchStart = useRef<number | null>(null);
@@ -70,31 +71,29 @@ const SwipeCard: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center pt-5 h-[700px] bg-red-500 relative">
+    <div className="flex flex-col items-center pt-5 h-[500px]  relative top-10 ">
       {cards.slice(0, currentIndex + 1).map((card, index) => (
         <TinderCard key={card.id} onSwipe={(dir) => swiped(dir, card.id)} onCardLeftScreen={() => outOfFrame(card.id)} preventSwipe={["up", "down"]}>
           <div
-            className="border-2 border-[#000] absolute"
+            className="border-2 border-[#000] absolute h-[430px] w-[300px]"
             style={{
-              width: "300px",
-              height: "400px",
               backgroundImage: `url(${card.url})`,
               backgroundSize: "cover",
               borderRadius: "10px",
-              top: "0%", // Posisi atas dari gambar
+              top: "10%", // Posisi atas dari gambar
               left: "50%",
-              transform: `translate(-50%, 0) rotate(${index === currentIndex ? 5 : -5}deg)`,
+              transform: `translate(-50%, 0) rotate(${rotations[index]}deg)`, // Set rotation from the rotations array
               zIndex: index === currentIndex ? 1 : 0,
               boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Menambahkan bayangan
               pointerEvents: index === currentIndex ? "auto" : "none", // Hanya kartu teratas yang bisa di klik atau swipe
             }}
             onTouchStart={handleTouchStart}
             onTouchEnd={() => handleTouchEnd(card.url)}
-          />
+          ></div>
         </TinderCard>
       ))}
 
-      <button onClick={handleReload} className="absolute bg-[#d6b064] shadow-lg border-2 border-black top-[400px] text-white p-1 rounded-full z-[1]">
+      <button onClick={handleReload} className="absolute bg-[#d6b064] shadow-lg border-2 border-black top-[430px] text-white p-1 rounded-full -z-1">
         <svg className="h-6 w-auto" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -107,6 +106,7 @@ const SwipeCard: React.FC = () => {
           </g>
         </svg>
       </button>
+      <div className="text-white relative -top-10 text-white/30">Swipe untuk melihat foto lainnya</div>
 
       {/* Preview Image Modal */}
       {isPreviewOpen && (
