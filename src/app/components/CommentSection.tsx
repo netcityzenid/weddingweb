@@ -66,7 +66,7 @@ const CommentForm = ({ onCommentSubmitted }: CommentFormProps) => {
           {loading ? <div>Mengirim</div> : <div>Kirim Ucapan</div>}
         </button>
       </form>
-      {message && <p>{message}</p>}
+      {message && <p>{message}</p>} 
     </div>
   );
 };
