@@ -27,11 +27,6 @@ const getRandomColor = () => {
   return COLORS[randomIndex];
 };
 
-const getInitials = (name: string) => {
-  const names = name.split(" ");
-  return (names[0][0] + (names[1] ? names[1][0] : "")).toUpperCase();
-};
-
 const CommentList = () => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [loading, setLoading] = useState(true);

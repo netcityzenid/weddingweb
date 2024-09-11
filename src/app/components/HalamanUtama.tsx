@@ -13,7 +13,6 @@ import SwipeCard from "./CardStack";
 import im15 from "../../../public/images/im15.jpg";
 import im1 from "../../../public/images/im1.jpg";
 import couple from "../../../public/images/couple-1.jpg";
-import CommentForm from "./CommentSection";
 import CommentList from "./GetComment";
 interface HalamanUtamaProps {
   className?: string; // Izinkan properti className
