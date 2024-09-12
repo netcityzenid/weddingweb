@@ -51,7 +51,7 @@ const CommentList = () => {
       }
     };
 
-    fetchComments();
+    fetchComments(); 
   }, []);
 
   if (error) {
