@@ -6,6 +6,7 @@ export async function GET() {
   try {
     await dbConnect();
     const comments = await Komen.find().sort({ createdAt: -1 });
+    console.log("Fetched comments:", comments); // Tambahkan logging
     const response = NextResponse.json(comments, { status: 200 });
     response.headers.set("Cache-Control", "no-store"); // Nonaktifkan caching
     return response;

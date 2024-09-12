@@ -27,12 +27,13 @@ const CommentList = () => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await fetch("/api/comments/get", { cache: "no-store" }); // Nonaktifkan cache
+        const res = await fetch("/api/comments/get", { cache: "no-store" });
         if (!res.ok) {
           const errorData = await res.text();
           throw new Error(errorData || "Failed to fetch comments");
         }
         const data: Comment[] = await res.json();
+        console.log("Fetched data:", data); // Tambahkan logging
         setComments(data);
       } catch (error: unknown) {
         console.error("Error fetching comments:", error);
@@ -43,6 +44,7 @@ const CommentList = () => {
         }
       }
     };
+
     fetchComments();
   }, []);
 
