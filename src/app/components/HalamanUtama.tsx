@@ -178,7 +178,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             <CommentList />
           </div>
         </div>
-        <div className="h-full ">
+        <div className="h-full bg-[#f0f0f0]">
           <div>
             <CommentForms />
           </div>

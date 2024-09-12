@@ -20,24 +20,38 @@ const timeAgo = (date: string) => {
   return `${diffDays} hari yang lalu`;
 };
 
-const CommentLists = () => {
-  const [comments, setComments] = useState<Comment[]>([]); // Menggunakan array dengan tipe Comment
+const CommentList = () => {
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await fetch("/api/comments");
-        const data: Comment[] = await res.json(); // Menentukan tipe response sebagai array Comment
+        const res = await fetch("/api/comments/get"); // Menyesuaikan dengan rute baru
+        if (!res.ok) {
+          const errorData = await res.text(); // Membaca respons sebagai teks jika tidak OK
+          throw new Error(errorData || "Failed to fetch comments");
+        }
+        const data: Comment[] = await res.json();
         setComments(data);
-      } catch (error) {
-        console.error("Failed to fetch comments", error);
+      } catch (error: unknown) {
+        console.error("Error fetching comments:", error);
+        if (error instanceof Error) {
+          setError(error.message || "Unexpected error occurred");
+        } else {
+          setError("An unknown error occurred");
+        }
       }
     };
     fetchComments();
   }, []);
 
+  if (error) {
+    return <div>Error: {error}</div>; // Menampilkan error di UI jika ada
+  }
+
   return (
-    <div>
+    <div >
       {comments.map((comment) => (
         <div key={comment._id} className="comment">
           <h3>{comment.name}</h3>
@@ -50,4 +64,4 @@ const CommentLists = () => {
   );
 };
 
-export default CommentLists;
+export default CommentList;
