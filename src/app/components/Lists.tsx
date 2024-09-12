@@ -23,25 +23,31 @@ const timeAgo = (date: string) => {
 const CommentList = () => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchComments = async () => {
+      setLoading(true); // Jika kamu menggunakan state loading
       try {
-        const res = await fetch("/api/comments/get", { cache: "no-store" });
-        if (!res.ok) {
-          const errorData = await res.text();
-          throw new Error(errorData || "Failed to fetch comments");
-        }
-        const data: Comment[] = await res.json();
-        console.log("Fetched data:", data); // Tambahkan logging
-        setComments(data);
-      } catch (error: unknown) {
-        console.error("Error fetching comments:", error);
-        if (error instanceof Error) {
-          setError(error.message || "Unexpected error occurred");
+        const res = await fetch("/api/comments/get"); // Endpoint API yang sesuai
+        const data = await res.json();
+
+        if (res.ok) {
+          // Asumsi data yang diterima adalah dalam bentuk { success: boolean, comments: Comment[] }
+          if (data.success) {
+            setComments(data.comments); // Update state dengan data yang diterima
+          } else {
+            setError("Failed to fetch comments"); // Pesan error jika data.success false
+          }
         } else {
-          setError("An unknown error occurred");
+          // Jika status response tidak ok (misalnya 4xx, 5xx)
+          setError("Failed to fetch comments"); // Pesan error jika response tidak ok
         }
+      } catch (err) {
+        // Tangani kesalahan yang terjadi selama fetch
+        setError("An error occurred while fetching comments"); // Pesan error untuk kesalahan jaringan atau lain-lain
+      } finally {
+        setLoading(false); // Set loading false di akhir
       }
     };
 
@@ -51,6 +57,7 @@ const CommentList = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div>
