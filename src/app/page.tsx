@@ -16,6 +16,6 @@ export default function Home() {
 
       {/* Undangan container di atas dengan posisi absolute */}
       <UndanganContainer onOpenInvitation={handleOpenInvitation} />
-    </div>
+    </div> 
   );
 }
