@@ -177,13 +177,13 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           <div className="mt-10 pb-20">
             <CommentList />
           </div>
-          <div className="h-full ">
-            <div>
-              <CommentForms />
-            </div>
-            <div>
-              <CommentLists />
-            </div>
+        </div>
+        <div className="h-full ">
+          <div>
+            <CommentForms />
+          </div>
+          <div>
+            <CommentLists />
           </div>
         </div>
       </div>
