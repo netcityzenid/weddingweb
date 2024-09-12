@@ -27,9 +27,9 @@ const CommentList = () => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await fetch("/api/comments/get"); // Menyesuaikan dengan rute baru
+        const res = await fetch("/api/comments/get", { cache: "no-store" }); // Nonaktifkan cache
         if (!res.ok) {
-          const errorData = await res.text(); // Membaca respons sebagai teks jika tidak OK
+          const errorData = await res.text();
           throw new Error(errorData || "Failed to fetch comments");
         }
         const data: Comment[] = await res.json();
@@ -47,11 +47,11 @@ const CommentList = () => {
   }, []);
 
   if (error) {
-    return <div>Error: {error}</div>; // Menampilkan error di UI jika ada
+    return <div>Error: {error}</div>;
   }
 
   return (
-    <div >
+    <div>
       {comments.map((comment) => (
         <div key={comment._id} className="comment">
           <h3>{comment.name}</h3>

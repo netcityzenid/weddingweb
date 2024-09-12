@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server";
-import Komen from "@/app/models/Komen"; // Pastikan path ini benar
-import dbConnect from "@/app/utils/database"; // Pastikan path ini benar
+import Komen from "@/app/models/Komen";
+import dbConnect from "@/app/utils/database";
 
 export async function GET() {
   try {
-    await dbConnect(); // Koneksi ke MongoDB
-    const comments = await Komen.find().sort({ createdAt: -1 }); // Mengambil semua komentar dari database dan urutkan berdasarkan waktu
-    return NextResponse.json(comments, { status: 200 }); // Mengembalikan response JSON dengan status 200
+    await dbConnect();
+    const comments = await Komen.find().sort({ createdAt: -1 });
+    const response = NextResponse.json(comments, { status: 200 });
+    response.headers.set("Cache-Control", "no-store"); // Nonaktifkan caching
+    return response;
   } catch (error: unknown) {
     console.error("Failed to fetch comments:", error);
     if (error instanceof Error) {

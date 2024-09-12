@@ -1,6 +1,5 @@
 /* eslint-disable prefer-const */
 /* eslint-disable no-var */
-// lib/dbConnect.ts
 import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGO_URI;
