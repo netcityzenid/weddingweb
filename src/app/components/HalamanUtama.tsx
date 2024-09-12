@@ -14,6 +14,8 @@ import im15 from "../../../public/images/im15.jpg";
 import im1 from "../../../public/images/im1.jpg";
 import couple from "../../../public/images/couple-1.jpg";
 import CommentList from "./GetComment";
+import CommentLists from "./Lists";
+import CommentForms from "./Form";
 interface HalamanUtamaProps {
   className?: string; // Izinkan properti className
 }
@@ -174,6 +176,12 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           <div className="text-center mb-2">Kirim Ucapan dan Doa Restu</div>
           <div className="mt-10 pb-20">
             <CommentList />
+          </div>
+          <div>
+            <CommentForms />
+          </div>
+          <div>
+            <CommentLists />
           </div>
         </div>
       </div>
