@@ -25,7 +25,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
   return (
     <div className={className}>
       <div className=" overflow-x-hidden">
-        <div id="section-1" className="w-full h-full pb-20 bg-[#f0f0f0] relative overflow-hidden">
+        <div id="section-1" className="w-full h-full pb-20 bg-[#f0f0f0] relative ">
           <Image src={goldleaf} alt="" className="absolute bottom-[400px] -left-20 opacity z-[51] h-32 w-auto transform scale-x-[-1] "></Image>
           <Image src={goldleaf} alt="" className="absolute bottom-[400px] -left-20 opacity z-[50] h-32 w-auto transform scale-x-[-1] blur-lg"></Image>
           <Image src={goldleaf} alt="" className="absolute -bottom-10 -right-1/2  w-auto  opacity-20 "></Image>
@@ -177,11 +177,13 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           <div className="mt-10 pb-20">
             <CommentList />
           </div>
-          <div>
-            <CommentForms />
-          </div>
-          <div>
-            <CommentLists />
+          <div className="h-full ">
+            <div>
+              <CommentForms />
+            </div>
+            <div>
+              <CommentLists />
+            </div>
           </div>
         </div>
       </div>

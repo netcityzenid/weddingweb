@@ -54,11 +54,7 @@ const CommentList = () => {
   };
 
   useEffect(() => {
-    fetchComments();
-
-    const intervalId = setInterval(fetchComments, 5000); // Update setiap 5 detik
-
-    return () => clearInterval(intervalId); // Clear interval on component unmount
+    fetchComments(); // Clear interval on component unmount
   }, []);
 
   const timeAgo = (timestamp: string) => {
