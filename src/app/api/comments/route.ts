@@ -1,23 +1,26 @@
 import { NextResponse } from "next/server";
-import Comment from "../../models/Comment";
-import connectToDB from "../../utils/database";
+import Komen from "@/app/models/Komen";
+import dbConnect from "@/app/utils/database"; // Pastikan path ini benar
 
-// Fungsi untuk menangani POST request (Menambah komentar)
 export async function POST(req: Request) {
   try {
-    await connectToDB(); // Koneksi ke MongoDB
+    await dbConnect(); // Koneksi ke MongoDB
     const { name, comment, attendance } = await req.json(); // Mengambil data dari body request
 
     if (!name || !comment) {
       return NextResponse.json({ message: "Name and comment are required" }, { status: 400 });
     }
 
-    const newComment = new Comment({ name, comment, attendance }); // Membuat instance baru dari Comment
+    // Perbaiki pembuatan instance model dengan nama model yang benar
+    const newComment = new Komen({ name, comment, attendance });
     await newComment.save(); // Menyimpan data ke MongoDB
 
     return NextResponse.json({ message: "Comment added successfully" }, { status: 201 });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Error adding comment:", error);
-    return NextResponse.json({ message: "Failed to add comment", error: String(error) }, { status: 500 });
+    if (error instanceof Error) {
+      return NextResponse.json({ message: "Failed to add comment", error: error.message }, { status: 500 });
+    }
+    return NextResponse.json({ message: "Failed to add comment due to unknown error" }, { status: 500 });
   }
 }

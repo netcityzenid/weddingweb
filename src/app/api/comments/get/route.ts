@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
-import Comment from "../../../models/Comment";
-import connectToDB from "../../../utils/database";
+import Komen from "@/app/models/Komen"; // Pastikan path ini benar
+import dbConnect from "@/app/utils/database"; // Pastikan path ini benar
 
 export async function GET() {
   try {
-    await connectToDB(); // Koneksi ke MongoDB
-    const comments = await Comment.find().sort({ createdAt: -1 }); // Mengambil semua komentar dari database dan urutkan berdasarkan waktu
+    await dbConnect(); // Koneksi ke MongoDB
+    const comments = await Komen.find().sort({ createdAt: -1 }); // Mengambil semua komentar dari database dan urutkan berdasarkan waktu
     return NextResponse.json(comments, { status: 200 }); // Mengembalikan response JSON dengan status 200
   } catch (error: unknown) {
     console.error("Failed to fetch comments:", error);
