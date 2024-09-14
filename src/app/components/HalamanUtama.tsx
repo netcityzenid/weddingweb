@@ -16,11 +16,33 @@ import couple from "../../../public/images/couple-1.jpg";
 import CommentList from "./GetComment";
 import CommentLists from "./Lists";
 import CommentForms from "./Form";
+import { GetServerSideProps } from "next";
 interface HalamanUtamaProps {
-  className?: string; // Izinkan properti className
+  className?: string;
+  comments: Comment[]; // Tambahkan prop comments
 }
 
-const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
+interface Comment {
+  _id: string;
+  name: string;
+  comment: string;
+  attendance: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/comments`);
+  const data = await res.json();
+
+  return {
+    props: {
+      comments: data.comments, // Pastikan data diambil di server-side
+    },
+  };
+};
+
+const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className, comments }) => {
   const targetDate = "2025-04-19T00:00:00";
   return (
     <div className={className}>
@@ -183,7 +205,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             <CommentForms />
           </div>
           <div>
-            <CommentLists />
+            <CommentLists comments={comments} />
           </div>
         </div>
       </div>

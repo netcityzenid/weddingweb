@@ -5,7 +5,7 @@ import dbConnect from "@/app/utils/database";
 export async function GET() {
   try {
     await dbConnect();
-    const comments = await Komen.find().sort({ createdAt: -1 }); // Mengurutkan komentar berdasarkan waktu terbaru
+    const comments = await Komen.find().sort({ createdAt: -1 }); // Mengurutkan berdasarkan waktu terbaru
     return NextResponse.json({ success: true, comments }, { status: 200 });
   } catch (error: unknown) {
     console.error("Failed to fetch comments:", error);
