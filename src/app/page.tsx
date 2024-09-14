@@ -28,7 +28,7 @@ export default function Home() {
   }, []);
 
   const handleOpenInvitation = () => {
-    setIsInvitationOpen(true);
+    setIsInvitationOpen(true); 
   };
 
   return (
