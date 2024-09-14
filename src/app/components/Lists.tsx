@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import useSWR from "swr";
 
 interface Comment {
   _id: string;
@@ -6,71 +6,30 @@ interface Comment {
   comment: string;
   attendance: boolean;
   createdAt: string;
+  updatedAt: string;
 }
 
-const timeAgo = (date: string) => {
-  const now = new Date();
-  const createdAt = new Date(date);
-  const diffMs = now.getTime() - createdAt.getTime();
-  const diffMinutes = Math.floor(diffMs / 60000);
-  if (diffMinutes < 60) return `${diffMinutes} menit yang lalu`;
-  const diffHours = Math.floor(diffMinutes / 60);
-  if (diffHours < 24) return `${diffHours} jam yang lalu`;
-  const diffDays = Math.floor(diffHours / 24);
-  return `${diffDays} hari yang lalu`;
-};
+// Fungsi untuk fetch data dari API
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-const CommentList = () => {
-  const [comments, setComments] = useState<Comment[]>([]);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
+export default function CommentList() {
+  const { data, error, isLoading } = useSWR<{ success: boolean; comments: Comment[] }>("/api/comments/get", fetcher, {
+    refreshInterval: 5000, // Polling setiap 5 detik
+  });
 
-  useEffect(() => {
-    const fetchComments = async () => {
-      setLoading(true); // Jika kamu menggunakan state loading
-      try {
-        const res = await fetch("/api/comments/get"); // Endpoint API yang sesuai
-        const data = await res.json();
-
-        if (res.ok) {
-          // Asumsi data yang diterima adalah dalam bentuk { success: boolean, comments: Comment[] }
-          if (data.success) {
-            setComments(data.comments); // Update state dengan data yang diterima
-          } else {
-            setError("Failed to fetch comments"); // Pesan error jika data.success false
-          }
-        } else {
-          // Jika status response tidak ok (misalnya 4xx, 5xx)
-          setError("Failed to fetch comments"); // Pesan error jika response tidak ok
-        }
-      } catch (err) {
-        // Tangani kesalahan yang terjadi selama fetch
-        setError("An error occurred while fetching comments"); // Pesan error untuk kesalahan jaringan atau lain-lain
-      } finally {
-        setLoading(false); // Set loading false di akhir
-      }
-    };
-
-    fetchComments(); 
-  }, []);
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error loading comments.</div>;
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <div>
-      {comments.map((comment) => (
+      {data?.comments.map((comment) => (
         <div key={comment._id} className="comment">
-          <h3>{comment.name}</h3>
+          <p>{comment.name}</p>
           <p>{comment.comment}</p>
           <p>{comment.attendance ? "Hadir" : "Tidak Hadir"}</p>
-          <span>{timeAgo(comment.createdAt)}</span>
+          <p>{new Date(comment.createdAt).toLocaleString()}</p>
         </div>
       ))}
     </div>
   );
-};
-
-export default CommentList;
+}

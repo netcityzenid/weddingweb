@@ -38,7 +38,7 @@ const SwipeCard: React.FC = () => {
     touchEnd.current = new Date().getTime();
     const timeDiff = touchEnd.current - touchStart.current!;
 
-    if (timeDiff < 200) {
+    if (timeDiff < 1000) {
       // If time difference is short, consider it a click
       handleImageClick(cardUrl);
     }
