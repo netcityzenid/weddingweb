@@ -17,6 +17,7 @@ import CommentList from "./GetComment";
 import CommentLists from "./Lists";
 import CommentForms from "./Form";
 import { GetServerSideProps } from "next";
+import FormData from "./FromData";
 interface HalamanUtamaProps {
   className?: string;
   comments: Comment[]; // Tambahkan prop comments
@@ -207,6 +208,9 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className, comments }) => {
           <div>
             <CommentLists comments={comments} />
           </div>
+        </div>
+        <div className=" h-screen">
+          <FormData />s
         </div>
       </div>
     </div>
