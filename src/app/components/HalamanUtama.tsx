@@ -13,32 +13,10 @@ import SwipeCard from "./CardStack";
 import im15 from "../../../public/images/im15.jpg";
 import im1 from "../../../public/images/im1.jpg";
 import couple from "../../../public/images/couple-1.jpg";
-import { GetServerSideProps } from "next";
 import FormData from "./FromData";
 interface HalamanUtamaProps {
-  className?: string;
-  comments: Comment[]; // Tambahkan prop comments
+  className?: string;// Tambahkan prop comments
 }
-
-interface Comment {
-  _id: string;
-  name: string;
-  comment: string;
-  attendance: boolean;
-  createdAt: string;
-  updatedAt: string;
-}
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/comments`);
-  const data = await res.json();
-
-  return {
-    props: {
-      comments: data.comments, // Pastikan data diambil di server-side
-    },
-  };
-};
 
 const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
   const targetDate = "2025-04-19T00:00:00";
@@ -188,13 +166,13 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             </div>
           </div>
         </div>
-        <div id="section-4" className="h-full bg-[#f0f0f0] px-5 pt-20">
+        <div id="section-4" className="h-full bg-[#f0f0f0] px-5 pt-20 mb-20">
           <div className="text-center">
             <p className=" text-4xl z-1 relative uppercase text-[#0a0a0a]">Ucapan</p>
             <p className="text-5xl text-[#d6b064] font-custom -mt-5">dan Doa</p>
           </div>
           <div className="text-center mt-2">Kirim Ucapan dan Doa Restu</div>
-          <div className="mt-5 ">
+          <div className="mt-5">
             <FormData />
           </div>
         </div>

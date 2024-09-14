@@ -12,22 +12,6 @@ interface FormData {
   createdAt: string;
 }
 
-const COLORS = [
-  "#d6b064", // Coral
-  "#6B5B95", // Purple
-  "#88B04B", // Green
-  "#F7CAC9", // Pink
-  "#92A8D1", // Blue
-  "#F5BE42", // Yellow
-  "#6B8E23", // Olive
-  "#D2691E", // Chocolate
-];
-
-const getRandomColor = () => {
-  const randomIndex = Math.floor(Math.random() * COLORS.length);
-  return COLORS[randomIndex];
-};
-
 export default function Home() {
   const [formData, setFormData] = useState({ name: "", comment: "", attendance: "" });
   const [submittedData, setSubmittedData] = useState<FormData[]>([]);
@@ -99,10 +83,10 @@ export default function Home() {
         </button>
       </form>
       <div className="mt-10 py-5 whitespace-nowrap overflow-y-auto max-h-96 relative">
-        <ul className="text-black">
+        <ul className="text-black mb-20">
           {submittedData.map((data) => (
-            <div className="pb-20 ">
-              <li className="border border-[#d6b064] bg-[#] h-max rounded-lg shadow-sm mb-2 p-2 px-4 text-[#0a0a0a] chamfer flex gap-2" key={data._id}>
+            <div className="" key={data._id}>
+              <li className="border border-[#d6b064] bg-[#] h-max rounded-lg shadow-sm mb-2 p-2 px-4 text-[#0a0a0a] chamfer flex gap-2" >
                 <div className="mt-1 border bg-white h-[29px] w-8 font-bold text-white  uppercase text-center items-center flex justify-center rounded-full">
                   <div className="text-[#d6b064]">{data.name.slice(0, 1)}</div>
                   <Image src={border} alt="" className=" absolute h-[29px] w-8"></Image>
