@@ -13,9 +13,6 @@ import SwipeCard from "./CardStack";
 import im15 from "../../../public/images/im15.jpg";
 import im1 from "../../../public/images/im1.jpg";
 import couple from "../../../public/images/couple-1.jpg";
-import CommentList from "./GetComment";
-import CommentLists from "./Lists";
-import CommentForms from "./Form";
 import { GetServerSideProps } from "next";
 import FormData from "./FromData";
 interface HalamanUtamaProps {
@@ -43,7 +40,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   };
 };
 
-const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className, comments }) => {
+const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
   const targetDate = "2025-04-19T00:00:00";
   return (
     <div className={className}>
@@ -179,8 +176,8 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className, comments }) => {
             </div>
             <SwipeCard />
           </div>
-          <div className="bg-white/5 rounded-[30px] mt-10 overflow-hidden">
-            <div className="text-[#f0f0f0] bg-[#]  text-center p-5  leading-8 text-sm font-light">
+          <div className="bg-[#191919] rounded-[30px] mt-10 overflow-hidden">
+            <div className="text-white/60 bg-[#]  text-center p-5  leading-8 text-sm font-light">
               &quot;Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang.
               Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.&quot;
               <br />
@@ -196,22 +193,12 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className, comments }) => {
             <p className=" text-4xl z-1 relative uppercase text-[#0a0a0a]">Ucapan</p>
             <p className="text-5xl text-[#d6b064] font-custom -mt-5">dan Doa</p>
           </div>
-          <div className="text-center mb-2">Kirim Ucapan dan Doa Restu</div>
-          <div className="mt-10 pb-20">
-            <CommentList />
+          <div className="text-center mt-2">Kirim Ucapan dan Doa Restu</div>
+          <div className="mt-5 ">
+            <FormData />
           </div>
         </div>
-        <div className="h-full bg-[#f0f0f0]">
-          <div>
-            <CommentForms />
-          </div>
-          <div>
-            <CommentLists comments={comments} />
-          </div>
-        </div>
-        <div className=" h-screen">
-          <FormData />s
-        </div>
+        <div id="section-5" className="h-screen"></div>
       </div>
     </div>
   );
