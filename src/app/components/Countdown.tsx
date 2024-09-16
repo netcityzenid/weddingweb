@@ -42,28 +42,28 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
 
   return (
     <div className="countdown-timer grid grid-cols-4 gap-2 justify-center text-center mx-auto">
-      <div className="text-[#051725] items-center justify-center text-center p-1 block py- px-8 bg-[#d6b064] rounded-xl">
+      <div className="text-[#051725] items-center justify-center text-center p-1 block py- px-8  rounded-xl">
         <div className="bg-red-">
-          <span className="items-start text-sm flex font-semibold text-center justify-center">{timeLeft.days}</span>
+          <span className="items-start text-3xl flex font-semibold text-center justify-center text-[#d6b064]">{timeLeft.days}</span>
           <span className="text-xs items-center bg-green- flex justify-center">Hari</span>
         </div>
       </div>
-      <div className=" text-[#051725] items-center justify-center text-center p-1 block py- px-8 bg-[#d6b064] rounded-xl">
-        <div>
-          <span className="items-start text-sm flex font-semibold text-center justify-center">{timeLeft.hours}</span>
-          <span className="text-xs items-center bg-green- flex  justify-center">Jam</span>
+      <div className="text-[#051725] items-center justify-center text-center p-1 block py- px-8  rounded-xl">
+        <div className="bg-red-">
+          <span className="items-start text-3xl flex font-semibold text-center justify-center text-[#d6b064]">{timeLeft.hours}</span>
+          <span className="text-xs items-center bg-green- flex justify-center">Jam</span>
         </div>
       </div>
-      <div className=" text-[#051725] items-center justify-center text-center p-1 block py- px-8 bg-[#d6b064] rounded-xl">
-        <div>
-          <span className="items-start text-sm flex font-semibold text-center justify-center">{timeLeft.minutes}</span>
-          <span className="text-xs items-center bg-green- flex  justify-center">Menit</span>
+      <div className="text-[#051725] items-center justify-center text-center p-1 block py- px-8  rounded-xl">
+        <div className="bg-red-">
+          <span className="items-start text-3xl flex font-semibold text-center justify-center text-[#d6b064]">{timeLeft.minutes}</span>
+          <span className="text-xs items-center bg-green- flex justify-center">Menit</span>
         </div>
       </div>
-      <div className=" text-[#051725] items-center justify-center text-center p-1 block py- px-8 bg-[#d6b064] rounded-xl">
-        <div>
-          <span className="items-start text-sm flex font-semibold text-center justify-center">{timeLeft.seconds}</span>
-          <span className="text-xs items-center bg-green- flex  justify-center">Detik</span>
+      <div className="text-[#051725] items-center justify-center text-center p-1 block py- px-8  rounded-xl">
+        <div className="bg-red-">
+          <span className="items-start text-3xl flex font-semibold text-center justify-center text-[#d6b064]">{timeLeft.seconds}</span>
+          <span className="text-xs items-center bg-green- flex justify-center">Detik</span>
         </div>
       </div>
     </div>

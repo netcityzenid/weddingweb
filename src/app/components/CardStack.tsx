@@ -38,7 +38,7 @@ const SwipeCard: React.FC = () => {
     touchEnd.current = new Date().getTime();
     const timeDiff = touchEnd.current - touchStart.current!;
 
-    if (timeDiff < 1000) {
+    if (timeDiff < 10) {
       // If time difference is short, consider it a click
       handleImageClick(cardUrl);
     }
@@ -68,14 +68,14 @@ const SwipeCard: React.FC = () => {
   const handleClosePreview = () => {
     setIsPreviewOpen(false);
     setPreviewImageUrl(null);
-  }; 
+  };
 
   return (
     <div className="flex flex-col items-center pt-5 h-[500px]  relative top-10 ">
       {cards.slice(0, currentIndex + 1).map((card, index) => (
         <TinderCard key={card.id} onSwipe={(dir) => swiped(dir, card.id)} onCardLeftScreen={() => outOfFrame(card.id)} preventSwipe={["up", "down"]}>
           <div
-            className="border-2 border-[#000] absolute h-[430px] w-[300px]" 
+            className="border-2 border-[#000] absolute h-[430px] w-[300px]"
             style={{
               backgroundImage: `url(${card.url})`,
               backgroundSize: "cover",
