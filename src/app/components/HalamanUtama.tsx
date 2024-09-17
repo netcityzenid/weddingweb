@@ -133,7 +133,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             </div>
           </div>
           <div className=" relative mt-20 -mb-1">
-            <Image src={sectiongold} alt="" className=" absolute bottom-0 z-50"></Image>
+            <Image src={sectiongold} alt="" className=" absolute bottom-0 scale-1.05 z-50"></Image>
           </div>
           <div className=" backdrop-filter backdrop-blur-sm bg-[#d6b064] p-5">
             <div className="">
@@ -268,11 +268,11 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
         </div>
 
         <div className=" relative mt-20 -mb-1">
-          <Image src={sectionwhite} alt="" className=" absolute bottom-0 z-10"></Image>
-          <Image src={sectiongold} alt="" className=" absolute bottom-0 "></Image>
+          <Image src={sectionwhite} alt="" className=" absolute bottom-0 scale-1.05 z-10"></Image>
+          <Image src={sectiongold} alt="" className=" absolute bottom-0 scale-1.05 "></Image>
         </div>
         <div id="section-2" className=" bg-[#f0f0f0] pt-20 text-center pb-48 relative">
-          <Image src={hand} alt="" className=" absolute bottom-0 pb-20"></Image>
+          <Image src={hand} alt="" className=" absolute bottom-0 scale-1.05 pb-20"></Image>
           <div className=" px-5 z-50 relative">
             <div className="text-5xl font-custom mb-10">Wedding Event</div>
             <div className="p-5 rounded-3xl bg-white/50 overflow-hidden shadow-lg text-black/80 relative">
@@ -371,8 +371,8 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
         </div>
 
         <div className=" relative mt-20 -mb-1">
-          <Image src={sectionwhite} alt="" className=" absolute bottom-0 z-10"></Image>
-          <Image src={sectiongold} alt="" className=" absolute bottom-0 "></Image>
+          <Image src={sectionwhite} alt="" className=" absolute bottom-0 scale-1.05 z-10"></Image>
+          <Image src={sectiongold} alt="" className=" absolute bottom-0 scale-1.05 "></Image>
         </div>
         <div id="section-4" className="h-full bg-[#f0f0f0] pt-20 mb-20">
           <div className="text-center">
@@ -539,8 +539,8 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
         </div>
 
         <div className=" relative mt-20 -mb-1">
-          <Image src={sectionwhite} alt="" className=" absolute bottom-0 z-10"></Image>
-          <Image src={sectiongold} alt="" className=" absolute bottom-0 "></Image>
+          <Image src={sectionwhite} alt="" className=" absolute bottom-0 scale-1.05  z-10"></Image>
+          <Image src={sectiongold} alt="" className=" absolute bottom-0 scale-1.05 "></Image>
         </div>
         <div id="section-6" className="bg-[#f0f0f0]  pt-20 relative">
           <div className="absolute top-0 h-60 bg-gradient-to-b from-[#f0f0f0] to-[#f0f0f000] via-[#f0f0f0] z-50 flex w-full"></div>
