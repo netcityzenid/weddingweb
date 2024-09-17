@@ -19,9 +19,9 @@ import permata from "../../../public/images/permata.png";
 import bca from "../../../public/images/BCA.svg";
 import lines from "../../../public/images/lines.png";
 import im12 from "../../../public/images/im12.jpg";
-import sectionwhite from "../../../public/images/section-white.svg";
-import sectiongold from "../../../public/images/section-gold.svg";
-import sectionblack from "../../../public/images/section-black.svg";
+import sectionwhite from "../../../public/images/section-white.png";
+import sectiongold from "../../../public/images/section-gold.png";
+import sectionblack from "../../../public/images/section-black.png";
 interface HalamanUtamaProps {
   className?: string; // Tambahkan prop comments
 }
