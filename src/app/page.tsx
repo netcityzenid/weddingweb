@@ -2,7 +2,7 @@
 "use client";
 import UndanganContainer from "./components/InvitationCard";
 import HalamanUtama from "./components/HalamanUtama";
-import { useState } from "react";
+import { useState, } from "react";
 import { AudioProvider } from "./components/AudioContext";
 
 export default function Home() {
@@ -14,13 +14,13 @@ export default function Home() {
 
   return (
     <AudioProvider>
-      <div className="relative min-h-screen max-w-sm mx-auto bg-white">
-        {/* Halaman utama di bawah */}
-        <HalamanUtama className={`${isInvitationOpen ? "relative" : "fixed w-full h-full"}`} />
+      <div className="relative max-w-[400px] mx-auto min-h-screen">
+      {/* Halaman utama di bawah */}
+      <HalamanUtama className={`${isInvitationOpen ? "relative" : "fixed w-full h-full"}`} />
 
-        {/* Undangan container di atas dengan posisi absolute */}
-        <UndanganContainer onOpenInvitation={handleOpenInvitation} />
-      </div>
+      {/* Undangan container di atas dengan posisi absolute */}
+      <UndanganContainer onOpenInvitation={handleOpenInvitation} />
+    </div>
     </AudioProvider>
   );
 }

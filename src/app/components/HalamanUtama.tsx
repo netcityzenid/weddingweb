@@ -93,7 +93,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
   const toggleOpen1 = () => setIsOpen1(!isOpen1);
   return (
     <div className={className}>
-      <div className=" overflow-x-hidden max-w-sm ">
+      <div className=" overflow-x-hidden  ">
         <MusicButton />
         <div id="section-1" className="w-full h-full bg-[#f0f0f0] relative">
           <Image src={goldleaf} alt="" className="absolute bottom-[300px] -left-20 opacity z-[51] h-32 w-auto transform scale-x-[-1] "></Image>

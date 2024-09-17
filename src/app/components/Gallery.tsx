@@ -14,7 +14,7 @@ import im9 from "../../../public/images/im9.jpg";
 import im10 from "../../../public/images/im10.jpg";
 
 export default function Gallery() {
-  const images = [im1.src, im2.src]; // Array of image sources
+  const images = [im1.src, im2.src, im3.src, im4.src, im5.src, im6.src, im7.src, im8.src, im9.src, im10.src]; // Array of image sources
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0); // Track the current photo index
 
@@ -34,33 +34,33 @@ export default function Gallery() {
         </div>
       </div>
       <div className="grid grid-cols-3 gap-2 mt-2">
-        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(0)}>
-          <Image src={im3} alt="Image 1" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
+        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(2)}>
+          <Image src={im3} alt="Image 3" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
         </div>
-        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(1)}>
-          <Image src={im4} alt="Image 2" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
+        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(3)}>
+          <Image src={im4} alt="Image 4" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
         </div>
-        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(1)}>
-          <Image src={im5} alt="Image 2" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
+        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(4)}>
+          <Image src={im5} alt="Image 5" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
         </div>
       </div>
       <div className="grid grid-cols-2 gap-2 mt-2">
-        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(0)}>
-          <Image src={im6} alt="Image 1" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
+        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(5)}>
+          <Image src={im6} alt="Image 6" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
         </div>
-        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(1)}>
-          <Image src={im7} alt="Image 2" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
+        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(6)}>
+          <Image src={im7} alt="Image 7" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
         </div>
       </div>
       <div className="grid grid-cols-3 gap-2 mt-2">
-        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(0)}>
-          <Image src={im8} alt="Image 1" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
+        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(7)}>
+          <Image src={im8} alt="Image 8" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
         </div>
-        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(1)}>
-          <Image src={im9} alt="Image 2" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
+        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(8)}>
+          <Image src={im9} alt="Image 9" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
         </div>
-        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(1)}>
-          <Image src={im10} alt="Image 2" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
+        <div style={{ aspectRatio: "1/1" }} className="flex overflow-hidden relative cursor-pointer" onClick={() => openImage(9)}>
+          <Image src={im10} alt="Image 10" layout="intrinsic" objectFit="cover" className="absolute bottom-0" />
         </div>
       </div>
 
