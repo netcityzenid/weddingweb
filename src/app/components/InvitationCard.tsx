@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import couple from "../../../public/images/couple.jpg";
 import layer1 from "../../../public/images/layer1.png";
@@ -12,6 +12,7 @@ import layer2s from "../../../public/images/layer-2s.png";
 import layer3s from "../../../public/images/layer-3s.png";
 import layer4s from "../../../public/images/layer-4s.png";
 import layer5s from "../../../public/images/layer-5s.png";
+import { useAudio } from './AudioContext';
 
 const getQueryParam = (name: string) => {
   if (typeof window !== "undefined") {
@@ -28,6 +29,7 @@ interface UndanganContainerProps {
 const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [guestName, setGuestName] = useState<string>("");
+  const { isPlaying, togglePlayPause } = useAudio();
 
   useEffect(() => {
     const name = getQueryParam("inv");
@@ -46,7 +48,8 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
 
   const handleOpenInvitation = () => {
     setIsOpen(true);
-    onOpenInvitation(); // Inform `page.tsx` that the invitation has been opened
+    onOpenInvitation();
+    togglePlayPause() // Inform `page.tsx` that the invitation has been opened
   };
 
   return (
