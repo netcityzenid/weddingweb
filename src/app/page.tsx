@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <AudioProvider>
-      <div className="relative max-w-[400px] mx-auto min-h-screen">
+      <div className="relative max-w-md mx-auto min-h-screen">
       {/* Halaman utama di bawah */}
       <HalamanUtama className={`${isInvitationOpen ? "relative" : "fixed w-full h-full"}`} />
 
