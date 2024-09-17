@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import couple from "../../../public/images/couple.jpg";
 import layer1 from "../../../public/images/layer1.png";
@@ -29,7 +29,7 @@ interface UndanganContainerProps {
 const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [guestName, setGuestName] = useState<string>("");
-  const { isPlaying, togglePlayPause } = useAudio();
+  const { togglePlayPause } = useAudio();
 
   useEffect(() => {
     const name = getQueryParam("inv");
