@@ -75,7 +75,7 @@ export default function Home() {
         <div className="w-full ">
           <div className="mb-2">
             <input
-              className="py-2  px-2 w-full border shadow-sm border-transparent focus:border-[#d6b064] focus:outline-none"
+              className="py-2 rounded px-2 w-full border shadow-sm border-transparent focus:border-[#d6b064] focus:outline-none"
               type="text"
               placeholder="Nama"
               value={formData.name}
@@ -85,7 +85,7 @@ export default function Home() {
           </div>
           <div className="mb-0.5">
             <textarea
-              className="py-2 px-2 w-full min-h-20 shadow-sm border border-transparent    focus:border-[#d6b064] focus:outline-none"
+              className="py-2 px-2 w-full rounded min-h-20 shadow-sm border border-transparent    focus:border-[#d6b064] focus:outline-none"
               placeholder="Ucapan"
               value={formData.comment}
               onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
@@ -94,7 +94,7 @@ export default function Home() {
           </div>
           <div className="relative">
             <select
-              className="appearance-none w-full  h-9 pl-2 border border-transparent focus:border-[#d6b064] focus:outline-none    bg-white text-black"
+              className="appearance-none w-full h-9 pl-2 border border-transparent focus:border-[#d6b064] focus:outline-none  rounded  bg-white text-black"
               value={formData.attendance}
               onChange={(e) => setFormData({ ...formData, attendance: e.target.value })}
               required
@@ -110,7 +110,7 @@ export default function Home() {
             </svg>
           </div>
         </div>
-        <button className="py-2 px-6 bg-[#d6b064] w-full mt-4   -md text-white font-semibold" type="submit">
+        <button className="py-2 px-6 bg-[#d6b064] w-full mt-4   rounded-md text-white font-semibold" type="submit">
           Kirim Ucapan
         </button>
       </form>
@@ -119,8 +119,8 @@ export default function Home() {
           <ul className="text-black mb-20">
             {submittedData.map((data) => (
               <div className="" key={data._id}>
-                <li className="border border-[#d6b064] bg-[#] h-max   -lg shadow-sm mb-2 p-2 px-4 text-[#0a0a0a] chamfer flex gap-2">
-                  <div className="mt-1 p-1 border relative bg-[#ffffff] min-h-8 min-w-8 max-h-8 max-w-8 font-bold text-white uppercase text-center items-center flex justify-center   -full">
+                <li className="  bg-[#fff]  h-max   rounded-lg shadow-sm mb-2 p-2 px-4 text-[#0a0a0a] chamfer flex gap-2">
+                  <div className="mt-1 p-1 border relative bg-[#ffffff] min-h-8 min-w-8 max-h-8 max-w-8 font-bold text-white uppercase text-center items-center flex justify-center   rounded-full">
                     <div className="text-[#d6b064]">{data.name.slice(0, 1)}</div>
                     <Image src={border} alt="" className="absolute min-h-8 min-w-10 max-h-8 max-w-10" />
                   </div>

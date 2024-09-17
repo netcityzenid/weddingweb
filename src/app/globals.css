@@ -98,7 +98,7 @@ body {
 /* Deklarasi font custom */
 @font-face {
   font-family: "CustomFont"; /* Beri nama font */
-  src: url("/fonts/custom.ttf") format("opentype"); /* Pastikan path benar */
+  src: url("/fonts/custom.otf") format("opentype"); /* Pastikan path benar */
   font-weight: normal;
   font-style: normal;
 }
