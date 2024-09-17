@@ -150,8 +150,8 @@ export default function Home() {
           </ul>
         </div>
         {showScrollButton && (
-          <button className="absolute  items-end flex mx-auto justify-center  bottom-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-b from-[#f0f0f000] to-[#f0f0f0] text-white  " onClick={scrollToTop}>
-            <span className="   -lg  items-center flex justify-center text-center">
+          <button className="absolute  items-start flex mx-auto justify-center  bottom-10 left-1/2 transform -translate-x-1/2  text-white  z-[100]" onClick={scrollToTop}>
+            <span className="  items-center flex justify-center text-center">
               <svg className="p-0.5 h-8 w-8 mb-2" width="64px" height="64px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
