@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useRef } from "react";
 import TinderCard from "react-tinder-card";
 
@@ -38,7 +39,7 @@ const SwipeCard: React.FC = () => {
     touchEnd.current = new Date().getTime();
     const timeDiff = touchEnd.current - touchStart.current!;
 
-    if (timeDiff < 10) {
+    if (timeDiff < 140) {
       // If time difference is short, consider it a click
       handleImageClick(cardUrl);
     }
@@ -73,18 +74,17 @@ const SwipeCard: React.FC = () => {
   return (
     <div className="flex flex-col items-center pt-5 h-[500px]  relative top-10 ">
       {cards.slice(0, currentIndex + 1).map((card, index) => (
-        <TinderCard key={card.id} onSwipe={(dir) => swiped(dir, card.id)} onCardLeftScreen={() => outOfFrame(card.id)} preventSwipe={["up", "down"]}>
+        <TinderCard className=" absolute" key={card.id} onSwipe={(dir) => swiped(dir, card.id)} onCardLeftScreen={() => outOfFrame(card.id)} preventSwipe={["up", "down"]}>
           <div
-            className="border-2 border-[#000] absolute h-[430px] w-[300px]"
+            className=" absolute h-[430px] w-[300px]"
             style={{
               backgroundImage: `url(${card.url})`,
               backgroundSize: "cover",
-              borderRadius: "10px",
               top: "10%", // Posisi atas dari gambar
               left: "50%",
               transform: `translate(-50%, 0) rotate(${rotations[index]}deg)`, // Set rotation from the rotations array
               zIndex: index === currentIndex ? 1 : 0,
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Menambahkan bayangan
+              boxShadow: "0px 0px 4px 8px rgba(0, 0, 0, 0.2)", // Menambahkan bayangan
               pointerEvents: index === currentIndex ? "auto" : "none", // Hanya kartu teratas yang bisa di klik atau swipe
             }}
             onTouchStart={handleTouchStart}

@@ -13,6 +13,7 @@ const config: Config = {
         sacramento: ["Sacramento"],
         sans: ["Raleway"],
         serif: ["Raleway"],
+        mono: ["Kode Mono"],
       },
     },
   },
