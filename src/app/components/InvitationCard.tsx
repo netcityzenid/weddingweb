@@ -55,7 +55,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
         initial="hidden"
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants}
-        className=" inset-0 min-h-screen bg-[#0a0a0a] absolute z-[1000] overflow-hidden"
+        className="bg-couple inset-0 min-h-screen bg-[#0a0a0a] absolute z-[1000] overflow-hidden"
       >
         <motion.div
           initial={{ opacity: 0, y: 100, x: 100 }} // Mulai dari atas dan dengan opacity 0
@@ -80,9 +80,6 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
           <Image src={layer3s} alt="" className="absolute -bottom-5 -left-5 rotate-animation3"></Image>
           <Image src={layer4s} alt="" className="absolute -bottom-5 -left-5 rotate-animation4"></Image>
           <Image src={layer5s} alt="" className="relative -bottom-5 -left-2 rotate-animation5"></Image>
-        </motion.div>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }} className="">
-          <Image src={bg} alt="im2" className=" opacity-70 absolute right-1/2 translate-x-1/2 flex bg-cover z-100 object-bottom"></Image>
         </motion.div>
         <div className="absolute top-40 text-white  right-1/2 translate-x-1/2 text-center">
           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }} className="">
