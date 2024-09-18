@@ -9,8 +9,6 @@ import bl from "../../../public/images/BL.png";
 import br from "../../../public/images/BR.png";
 import goldleaf from "../../../public/images/goldleaf.png";
 import FallingLeaves from "./FallingLeaf";
-import SwipeCard from "./CardStack";
-import im15 from "../../../public/images/im15.jpg";
 import im1 from "../../../public/images/im1.jpg";
 import couple from "../../../public/images/couple-1.jpg";
 import FormData from "./FromData";
