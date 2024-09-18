@@ -80,7 +80,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
           <Image src={layer4s} alt="" className="absolute -bottom-5 -left-5 rotate-animation4"></Image>
           <Image src={layer5s} alt="" className="relative -bottom-5 -left-2 rotate-animation5"></Image>
         </motion.div>
-        <div className="absolute top-40 text-white  right-1/2 translate-x-1/2 text-center">
+        <div className="absolute top-20 text-white  right-1/2 translate-x-1/2 text-center">
           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }} className="">
             <div className="">The Wedding Of</div>
             <div className="text-5xl font-custom " style={{ textShadow: " 0px 0px 0px rgba(0, 0, 0, 0.6)" }}>
@@ -89,13 +89,13 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
           </motion.div>
         </div>
 
-        <div className=" absolute text-white text-center right-1/2 bottom-[140px] translate-x-1/2">
+        <div className=" absolute text-white text-center right-1/2 bottom-[200px] translate-x-1/2">
           <motion.div className="" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
             <div className="text-sm mb-2">Kepada Bapak/Ibu/Saudara/i</div>
             <div className="font-semibold">{guestName || "Nama Tamu"}</div>
           </motion.div>
         </div>
-        <div className="absolute rounded-full bottom-20 right-1/2 translate-x-1/2 justify-center mx-auto flex gap-2 text-black  transition duration-300 overflow-hidden z-[1000]">
+        <div className="absolute rounded-full bottom-[140px] right-1/2 translate-x-1/2 justify-center mx-auto flex gap-2 text-black  transition duration-300 overflow-hidden z-[1000]">
           <motion.button initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }} onClick={handleOpenInvitation} className="py-1.5 px-4 border-2 rounded-full bg-gradient-to-b from-[#d6b064] to-[#a78541] shadow-lg ">
             {/* SVG Icon */}
             <div className="flex gap-1">
