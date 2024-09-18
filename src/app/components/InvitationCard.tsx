@@ -49,7 +49,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
   };
 
   return (
-    <div className="">
+    <div className="relative z-[1000]">
       <motion.div
         id="container"
         initial="hidden"
