@@ -25,17 +25,12 @@ import sectionblack from "../../../public/images/section-black.png";
 import MusicButton from "./ButtonAudio";
 import ImageGallery from "./Gallery";
 import flower from "../../../public/images/flower.png";
-import flowers from "../../../public/images/flowers.png";
 import flowerstop from "../../../public/images/flowers-top.png";
-import daunbg from "../../../public/images/daun-bg.png";
-import daunbg1 from "../../../public/images/daun-bg-1.png";
-import daunbg2 from "../../../public/images/daun-bg-2.png";
-import daunbg3 from "../../../public/images/daun-bg-3.png";
 interface HalamanUtamaProps {
   className?: string; // Tambahkan prop comments
 }
 
-const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
+const HalamanUtama: React.FC<HalamanUtamaProps> = () => {
   const targetDate = "2025-04-19T00:00:00";
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);

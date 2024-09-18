@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import couple from "../../../public/images/couple.jpg";
 import layer1 from "../../../public/images/layer1.png";
 import layer2 from "../../../public/images/layer2.png";
 import layer3 from "../../../public/images/layer3.png";
@@ -41,10 +40,6 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
   const containerVariants = {
     hidden: { y: 0, opacity: 1 }, // Posisi awal
     exit: { y: -1000, opacity: 1, transition: { duration: 3 } }, // Naik ke atas dan menghilang
-  };
-  const containerVariants1 = {
-    hidden: { y: 0, opacity: 1 }, // Posisi awal
-    exit: { x: -1000, opacity: 1, transition: { duration: 10 } }, // Naik ke atas dan menghilang
   };
 
   const handleOpenInvitation = () => {
