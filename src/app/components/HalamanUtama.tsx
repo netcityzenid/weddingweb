@@ -36,8 +36,8 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
   const [isOpen1, setIsOpen1] = useState(false);
   const mempelaiPria = "Galang Al Rizky";
   const mempelaiWanita = "Nurafni Putri Azzahra";
-  const mempelaiWanitaDari = "Putri pertama bapak Ismail & Ibu Fitri";
-  const mempelaiPriaDari = "Putra ketiga bapak Harun & Ibu Rahma";
+  const mempelaiWanitaDari = "Putri pertama Ibu Fitri & Bapak Ismail";
+  const mempelaiPriaDari = "Putra ketiga Bapak Harun & Ibu Rahma";
   const IGmempelaiWanita = "nurafniazahraa";
   const IGmempelaiPria = "galangalrizky";
 
@@ -190,7 +190,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
               </motion.div>
               <p className="mt-5 text-2xl font-bold font-custom  text-[#d6b064]">{mempelaiWanita}</p>
               <p className="mt-4 text-[#d6b064] text-sm">{mempelaiWanitaDari}</p>
-              <a href={`https://instagram.com/${IGmempelaiWanita}`} target="_blank" className="mt-4 flex text-center justify-center text-sm">
+              <a href={`https://instagram.com/${IGmempelaiWanita}`} target="_blank" className="mt-4 items-center flex text-center justify-center text-sm">
                 <span>
                   <svg className="h-4 w-auto mr-1" width="64px" height="64px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -379,13 +379,6 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             </div>
             <div className="text-white text-center mt-20 flex justify-center mb-5">
               <p className="text-5xl font-custom text-[#d6b064]"> Our Gallery</p>
-            </div>
-            <div className=" relative flex justify-center items-center ">
-              <div className="absolute w-[300px] h-[400px] top-5 rounded-xl "></div>
-              <div className="h-[430px] w-[300px] overflow-hidden top-[60px] rotate-[5deg] absolute">
-                <Image src={im15} alt="" className=" "></Image>
-              </div>
-              <SwipeCard />
             </div>
             <div>
               <ImageGallery />

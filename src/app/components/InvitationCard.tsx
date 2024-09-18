@@ -38,7 +38,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
   // Variants untuk animasi keluar undangan container
   const containerVariants = {
     hidden: { y: 0, opacity: 1 }, // Posisi awal
-    exit: { y: -1000, opacity: 1, transition: { duration: 3 } }, // Naik ke atas dan menghilang
+    exit: { y: -1000, opacity: 1, transition: { duration: 2 } }, // Naik ke atas dan menghilang
   };
 
   const handleOpenInvitation = () => {
@@ -54,7 +54,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
         initial="hidden"
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants}
-        className="bg-couple inset-0 min-h-screen bg-[#0a0a0a] absolute z-[1000] overflow-hidden"
+        className="bg-couple inset-0 min-h-screen bg-[#0a0a0a] fixed z-[1000] overflow-hidden"
       >
         <motion.div
           initial={{ opacity: 0, y: 100, x: 100 }} // Mulai dari atas dan dengan opacity 0
