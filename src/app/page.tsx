@@ -14,11 +14,17 @@ export default function Home() {
 
   return (
     <AudioProvider>
-      <div className="relative max-w-md mx-auto min-h-screen">
+      <div className="block sm:hidden">
         {/* Undangan container di atas dengan posisi absolute */}
         <UndanganContainer onOpenInvitation={handleOpenInvitation} />
         {/* Halaman utama di bawah */}
         {isInvitationOpen && <HalamanUtama className={`${isInvitationOpen ? "relative" : "fixed max-w-md h-full"}`} />}
+      </div>
+      <div className="sm:flex hidden text-white h-screen items-center justify-center text-center bg-[#d6b064] p-10">
+        <div className="text-2xl font-bold p-10 rounded-full bg-black/10">
+          <div>Buka undangan di handphone agar tampilan maksimal.</div>
+          <div>Minimal resolusi 640px</div>
+        </div>
       </div>
     </AudioProvider>
   );

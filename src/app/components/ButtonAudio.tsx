@@ -5,7 +5,7 @@ const MusicButton = () => {
   const { isPlaying, togglePlayPause } = useAudio();
 
   return (
-    <div className=" max-w-md w-full fixed z-[100] bottom-0">
+    <div className=" max-w-[640px] w-full fixed z-[200] bottom-0">
       <button onClick={togglePlayPause} className="p-0.5 rounded-full bg-[#f0f0f0] absolute right-5 bottom-5">
         {isPlaying ? (
           <div>

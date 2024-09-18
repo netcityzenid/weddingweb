@@ -61,7 +61,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
           initial={{ opacity: 0, y: 100, x: 100 }} // Mulai dari atas dan dengan opacity 0
           animate={{ opacity: 1, y: 0, x: 0 }} // Turun ke posisi aslinya dengan opacity 1
           transition={{ duration: 1, ease: "easeOut" }}
-          className="absolute w-1/2 right-0 z-[100] mx-auto bottom-0 max-w-md"
+          className="absolute w-1/2 right-0 z-[100] mx-auto bottom-0 "
         >
           <Image src={layer1} alt="" className="absolute -bottom-5 -right-5 rotate-animation"></Image>
           <Image src={layer2} alt="" className="absolute -bottom-5 -right-5 rotate-animation2 z-50"></Image>
@@ -82,7 +82,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
           <Image src={layer5s} alt="" className="relative -bottom-5 -left-2 rotate-animation5"></Image>
         </motion.div>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }} className="">
-          <Image src={bg} alt="im2" className=" opacity-70 absolute flex bg-cover z-100 object-bottom"></Image>
+          <Image src={bg} alt="im2" className=" opacity-70 absolute right-1/2 translate-x-1/2 flex bg-cover z-100 object-bottom"></Image>
         </motion.div>
         <div className="absolute top-40 text-white  right-1/2 translate-x-1/2 text-center">
           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }} className="">

@@ -97,7 +97,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
   return (
     <div className={className}>
       <AnimatePresence>
-        <div className=" overflow-hidden bg-pattern ">
+        <div className=" overflow-hidden bg-pattern relative max-w-[640px] mx-auto">
           <MusicButton />
           <div id="section-1" className="w-full h-full bg-pattern bg-[#f0f0f0] relative">
             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 3 }} className="">
