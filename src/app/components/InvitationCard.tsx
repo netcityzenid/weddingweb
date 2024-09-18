@@ -12,7 +12,6 @@ import layer3s from "../../../public/images/layer-3s.png";
 import layer4s from "../../../public/images/layer-4s.png";
 import layer5s from "../../../public/images/layer-5s.png";
 import { useAudio } from "./AudioContext";
-import bg from "../../../public/images/bg.png";
 
 const getQueryParam = (name: string) => {
   if (typeof window !== "undefined") {
