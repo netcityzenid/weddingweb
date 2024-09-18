@@ -55,7 +55,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
         initial="hidden"
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants}
-        className="h-screen inset-0  bg-[#0a0a0a] absolute z-[1000] overflow-hidden"
+        className=" inset-0 min-h-screen bg-[#0a0a0a] absolute z-[1000] overflow-hidden"
       >
         <motion.div
           initial={{ opacity: 0, y: 100, x: 100 }} // Mulai dari atas dan dengan opacity 0
