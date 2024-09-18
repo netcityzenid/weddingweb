@@ -18,6 +18,22 @@ body {
   background-color: #0a0a0a;
 }
 
+.rotating {
+  animation: rotatess 4s ease-in-out infinite;
+  transform: scale();
+}
+
+@keyframes rotatess {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
 .rotate-animation {
   animation: rotate 10s ease-in-out infinite;
   transform: scale();
@@ -98,7 +114,7 @@ body {
 /* Deklarasi font custom */
 @font-face {
   font-family: "CustomFont"; /* Beri nama font */
-  src: url("/fonts/custom.otf") format("opentype"); /* Pastikan path benar */
+  src: url("/fonts/Raligur.otf") format("opentype"); /* Pastikan path benar */
   font-weight: normal;
   font-style: normal;
 }
@@ -183,4 +199,21 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Menjaga rasio 1:1 */
+}
+
+.bg-pattern {
+}
+
+.bg-pattern::before {
+  content: "";
+  position:absolute;
+  top: -1;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/pattern.png");
+  background-position: center;
+  background-repeat:repeat;
+  background-size:contain;
+  pointer-events: none; /* Ensure the background doesn't interfere with interactions */
 }

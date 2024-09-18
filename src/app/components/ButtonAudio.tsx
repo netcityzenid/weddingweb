@@ -5,8 +5,8 @@ const MusicButton = () => {
   const { isPlaying, togglePlayPause } = useAudio();
 
   return (
-    <div className=" max-w-sm flex mx-auto">
-      <button onClick={togglePlayPause} className="p-0.5 rounded-full bg-[#f0f0f0] fixed bottom-5 right-2 z-[100]">
+    <div className=" max-w-md w-full fixed z-[100] bottom-0">
+      <button onClick={togglePlayPause} className="p-0.5 rounded-full bg-[#f0f0f0] absolute right-5 bottom-5">
         {isPlaying ? (
           <div>
             <svg className="h-8 w-auto" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

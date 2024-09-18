@@ -24,6 +24,13 @@ import sectiongold from "../../../public/images/section-gold.png";
 import sectionblack from "../../../public/images/section-black.png";
 import MusicButton from "./ButtonAudio";
 import ImageGallery from "./Gallery";
+import flower from "../../../public/images/flower.png";
+import flowers from "../../../public/images/flowers.png";
+import flowerstop from "../../../public/images/flowers-top.png";
+import daunbg from "../../../public/images/daun-bg.png";
+import daunbg1 from "../../../public/images/daun-bg-1.png";
+import daunbg2 from "../../../public/images/daun-bg-2.png";
+import daunbg3 from "../../../public/images/daun-bg-3.png";
 interface HalamanUtamaProps {
   className?: string; // Tambahkan prop comments
 }
@@ -91,11 +98,12 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
 
   const toggleOpen = () => setIsOpen(!isOpen);
   const toggleOpen1 = () => setIsOpen1(!isOpen1);
+
   return (
-    <div className={className}>
-      <div className=" overflow-x-hidden  ">
+    <div className="">
+      <div className=" overflow-hidden bg-pattern ">
         <MusicButton />
-        <div id="section-1" className="w-full h-full bg-[#f0f0f0] relative">
+        <div id="section-1" className="w-full h-full bg-pattern bg-[#f0f0f0] relative">
           <Image src={goldleaf} alt="" className="absolute bottom-[300px] -left-20 opacity z-[51] h-32 w-auto transform scale-x-[-1] "></Image>
           <Image src={goldleaf} alt="" className="absolute bottom-[300px] -left-20 opacity z-[50] h-32 w-auto transform scale-x-[-1] blur-lg"></Image>
           <Image src={goldleaf} alt="" className="absolute -bottom-10 -right-1/2  w-auto  opacity-20 "></Image>
@@ -103,11 +111,13 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           <Image src={goldleaf} alt="" className="absolute top-[0] -right-16 opacity-80 z-[50] h-32 w-auto blur-lg"></Image>
           <div className=" relative overflow-hidden">
             <FallingLeaves />
-            <Image src={im1} alt="couple" className=" rounded-b-[100px] border-b-4 border-[#d6b064] -mt-20"></Image>
+            <motion.div initial={{ y: -1000 }} animate={{ y: 0 }} transition={{ duration: 1 }} className="flex">
+              <Image src={im1} alt="couple" className=" rounded-b-[100px] border-b-4 border-[#d6b064] -mt-40"></Image>
+            </motion.div>
           </div>
           <div className="text-white px-5 relative z-[50] pb-20">
             <div className="">
-              <div className="text-center font-custom uppercase text-[#d6b064] mt-5">The wedding of</div>
+              <div className="text-center  uppercase text-[#d6b064] mt-5">The wedding of</div>
               <div className="font-custom text-center text-5xl mt-5 text-[#d6b064] leading-none">
                 Afni
                 <span className="px-2">&</span>
@@ -154,7 +164,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
                   </g>
                 </svg>
               </div>
-              <div className=" font-custom text-2xl text-center mb-5 text-[#f0f0f0]">Menuju Hari Bahagia</div>
+              <div className=" uppercase text-center mb-5 text-[#f0f0f0]">Menuju Hari Bahagia</div>
               <CountdownTimer targetDate={targetDate} />
             </div>
 
@@ -165,20 +175,23 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
         <div className="  relative">
           <Image src={sectionblack} alt="" className=" absolute -bottom-1 z-10"></Image>
         </div>
-        <div id="section2" className=" bg-[#0a0a0a] px-5 pb-32 pt-20">
-          <div className="text-[#d6b064] text-center font-serif ">
+        <section id="section2" className=" bg-pattern bg-[#0a0a0a] px-5 pb-32 pt-20 relative">
+          <div className="rotating">
+            <Image src={flower} alt="flower" className=" absolute -top-20 h-32 w-auto -left-20 transform scale-x-[-1]"></Image>
+          </div>
+          <div className="text-[#d6b064] text-center font-serif  relative">
             <p className="text-2xl font-semibold font-custom">Assalamu{"'"}alaikum Wr. Wb.</p>
-            <p className="mt-5 text-[#f0f0f0]">Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta kerabat dan teman-teman sekalian untuk menghadiri acara pernikahan kami :</p>
+            <p className="mt-5 text-[#d6b064] text-sm">Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta kerabat dan teman-teman sekalian untuk menghadiri acara pernikahan kami :</p>
           </div>
           <div className="w-full text-white text-center mt-4">
             <div className="px-14 pt-10">
               <Image src={afni} alt="" className=" rounded-t-full border-4 border-[#d6b064] mx-auto"></Image>
             </div>
             <p className="mt-5 text-2xl font-bold font-custom  text-[#d6b064]">{mempelaiWanita}</p>
-            <p className="mt-4 text-[#d6b064]">{mempelaiWanitaDari}</p>
-            <a href={`https://instagram.com/${IGmempelaiWanita}`} target="_blank" className="mt-4 flex text-center justify-center">
+            <p className="mt-4 text-[#d6b064] text-sm">{mempelaiWanitaDari}</p>
+            <a href={`https://instagram.com/${IGmempelaiWanita}`} target="_blank" className="mt-4 flex text-center justify-center text-sm">
               <span>
-                <svg className="h-6 w-auto mr-1" width="64px" height="64px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="h-4 w-auto mr-1" width="64px" height="64px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                   <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                   <g id="SVGRepo_iconCarrier">
@@ -219,15 +232,16 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
               <span className="text-[#d6b064]">{IGmempelaiWanita}</span>
             </a>
           </div>
+          <div className="text-[#d6b064] text-center mt-10 font-custom text-4xl">&</div>
           <div className="w-full text-white text-center mt-4">
             <div className="px-14 pt-10">
               <Image src={galang} alt="" className=" rounded-t-full border-4 border-[#d6b064] mx-auto"></Image>
             </div>
             <p className="mt-5 text-2xl font-bold font-custom  text-[#d6b064]">{mempelaiPria}</p>
-            <p className="mt-4 text-[#d6b064]">{mempelaiPriaDari}</p>
-            <a href={`https://instagram.com/${IGmempelaiPria}`} target="_blank" className="mt-4 flex text-center justify-center">
+            <p className="mt-4 text-[#d6b064] text-sm">{mempelaiPriaDari}</p>
+            <a href={`https://instagram.com/${IGmempelaiPria}`} target="_blank" className="mt-4 flex text-center justify-center text-sm items-center">
               <span>
-                <svg className="h-6 w-auto mr-1" width="64px" height="64px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="h-4 w-auto mr-1" width="64px" height="64px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                   <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                   <g id="SVGRepo_iconCarrier">
@@ -268,13 +282,22 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
               <span className="text-[#d6b064]">{IGmempelaiPria}</span>
             </a>
           </div>
+        </section>
+        <div className=" relative">
+          <Image src={flower} alt="flower" className=" absolute bottom-[500px] h-20 w-auto -right-10 rotate-animation5"></Image>
+        </div>
+        <div className=" relative">
+          <Image src={flower} alt="flower" className=" absolute bottom-[0px] h-20 w-auto -left-10 rotate-animation5"></Image>
         </div>
 
         <div className=" relative  -mb-1">
           <Image src={sectionwhite} alt="" className="  absolute bottom-0 scale-1.10 z-10"></Image>
           <Image src={sectiongold} alt="" className="  absolute bottom-0 scale-1.10 "></Image>
         </div>
-        <div id="section-2" className=" bg-[#f0f0f0] pt-20 text-center pb-72 relative">
+        <div id="section-2" className=" bg-pattern bg-[#f0f0f0] pt-20 text-center pb-72 relative">
+          <div className="rotating">
+            <Image src={flower} alt="flower" className=" absolute -top-20 h-32 w-auto -right-10 "></Image>
+          </div>
           <Image src={hand} alt="" className="  absolute bottom-0 scale-1.10 pb-32"></Image>
           <div className=" px-5 z-50 relative">
             <div className="text-5xl font-custom mb-10">Wedding Event</div>
@@ -349,7 +372,10 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           <Image src={sectionblack} alt="" className=" absolute bottom-0 z-10"></Image>
           <Image src={sectiongold} alt="" className=" absolute bottom-0 "></Image>
         </div>
-        <div id="section-3" className=" bg-[#0a0a0a] pt-2  px-5 pb-40 ">
+        <div id="section-3" className="  bg-[#0a0a0a] pt-2  px-5 pb-40 ">
+          <div className="rotating">
+            <Image src={flower} alt="flower" className=" absolute -top-10 h-32 w-auto -left-16 rotate-[45deg] transform scale-x-[-1]"></Image>
+          </div>
           <div className="text-white text-center mt-20 flex justify-center mb-5">
             <p className="text-5xl font-custom text-[#d6b064]"> Our Gallery</p>
           </div>
@@ -361,9 +387,9 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             <SwipeCard />
           </div>
           <div>
-            <ImageGallery/>
+            <ImageGallery />
           </div>
-          <div className="bg-[#222222] rounded-3xl mt-10 overflow-hidden">
+          <div className="bg-[#222222] rounded-3xl mt-10 overflow-hidden relative z-[100]">
             <div className="text-[#f0f0f0] bg-[#]  text-center p-5  leading-8 text-sm font-light">
               &quot;Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang.
               Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.&quot;
@@ -380,13 +406,16 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           <Image src={sectionwhite} alt="" className="  absolute bottom-0 scale-1.10 z-10"></Image>
           <Image src={sectiongold} alt="" className="  absolute bottom-0 scale-1.10 "></Image>
         </div>
-        <div id="section-4" className="h-full bg-[#f0f0f0] pt-20 pb-20">
+        <div id="section-4" className="   h-full bg-[#f0f0f0] pt-20 pb-20">
+          <div className="rotating">
+            <Image src={flower} alt="flower" className=" absolute -top-20 h-32 w-auto -right-10 "></Image>
+          </div>
           <div className="text-center">
             <p className=" text-5xl z-1 relative text-[#0a0a0a] font-custom">Ucapan dan</p>
             <p className=" text-5xl z-1 relative text-[#0a0a0a] font-custom">Doa Restu</p>
           </div>
           <div className="text-center mt-5">Kirim Ucapan dan Doa Restu</div>
-          <div className="mt-8">
+          <div className="mt-8 relative z-[100]">
             <FormData />
           </div>
         </div>
@@ -395,7 +424,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           <Image src={sectionblack} alt="" className=" absolute bottom-0 z-10"></Image>
           <Image src={sectiongold} alt="" className=" absolute bottom-0 "></Image>
         </div>
-        <div id="section-5" className=" pb-32 text-[#f0f0f0] bg-[#0a0a0a] py-20 px-5">
+        <div id="section-5" className="pb-32 text-[#f0f0f0] bg-[#0a0a0a] py-20 px-5">
           <div className="text-5xl font-custom text-center text-[#d6b064] relative z-1">Give a Gift</div>
           <div className=" text-center mt-5 text-[#f0f0f0] text-sm">kami menyambut setiap bentuk dukungan dan doa Anda. Terima kasih telah menjadi bagian dari perayaan ini dan berbagi kebahagiaan bersama kami.</div>
           <div className="mt-10">
@@ -548,12 +577,16 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           <Image src={sectionwhite} alt="" className="  absolute bottom-0 scale-1.10 z-10"></Image>
           <Image src={sectiongold} alt="" className="  absolute bottom-0 scale-1.10 "></Image>
         </div>
-        <div id="section-6" className="bg-[#f0f0f0] pt-20 relative">
-          <div className="absolute top-0 h-60 bg-gradient-to-b from-[#f0f0f0] to-[#f0f0f000] via-[#f0f0f0] z-50 flex w-full"></div>
+        <div id="section-6" className="bg-[#f0f0f0] pt-20 overflow-hidden relative">
+          <div className="relative">
+            <Image src={flowerstop} alt="flower" className=" absolute -top-0 -right-40 rotate-[90deg] h-20 w-auto  "></Image>
+          </div>
           <div className=" bg-[#f0f0f0] flex absolute "></div>
           <div className="z-50 px-5 relative">
             <div className="font-custom text-5xl text-[#0a0a0a] text-center mb-5">Terima Kasih</div>
-            <div className="text-center">Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.</div>
+            <div className="text-center text-sm">
+              Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
+            </div>
             <div className=" relative">
               <Image src={im12} alt="couple" className=" mt-5 bg-[#f0f0f0]"></Image>
               <div className=" z-50 absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#fff] font-sacramento font-bold text-[40px] leading-none " style={{ textShadow: " 0px 0px 10px rgba(0, 0, 0, 0.6)" }}>
