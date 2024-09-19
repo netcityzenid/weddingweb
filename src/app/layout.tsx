@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -13,7 +14,7 @@ const geistMono = localFont({
 });
 
 // app/layout.tsx
-export const metadata = {
+export const metadata: Metadata = {
   title: "Afni & Galang Wedding",
   description: "Join us in celebrating the wedding of Afni and Galang!",
   openGraph: {
@@ -23,14 +24,27 @@ export const metadata = {
     siteName: "Afni & Galang Wedding",
     images: [
       {
-        url: "https://weddingweb-beta.vercel.app/images/couple-1.jpg", // Ganti dengan URL gambar
+        url: "https://weddingweb-beta.vercel.app/images/couple-1.jpg", // Pastikan path benar
         width: 600,
         height: 600,
         alt: "Afni & Galang Wedding",
       },
     ],
-    locale: "en_US",
+    locale: "en_US", // Gunakan "id_ID" jika ingin bahasa Indonesia
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image", // Tambahkan properti Twitter
+    title: "Afni & Galang Wedding",
+    description: "Join us in celebrating the wedding of Afni and Galang!",
+    images: [
+      {
+        url: "https://weddingweb-beta.vercel.app/images/couple-1.jpg",
+        width: 600,
+        height: 600,
+        alt: "Afni & Galang Wedding",
+      },
+    ],
   },
 };
 
