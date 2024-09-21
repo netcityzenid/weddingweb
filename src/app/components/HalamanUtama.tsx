@@ -235,7 +235,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             <div className="w-full text-white text-center mt-4">
               <AnimatedComponent initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }}>
                 <div className="px-14 pt-10">
-                  <Image src={afni} alt="" className=" rounded-t-full border-4 border-[#d6b064] mx-auto"></Image>
+                  <Image src={afni} alt="" className=" relative rounded-t-full border-4 border-[#d6b064] mx-auto"></Image>
                 </div>
               </AnimatedComponent>
               <AnimatedComponent initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }}>
@@ -292,7 +292,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             <div className="w-full text-white text-center mt-4">
               <AnimatedComponent initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }}>
                 <div className="px-14 pt-10">
-                  <Image src={galang} alt="" className=" rounded-t-full border-4 border-[#d6b064] mx-auto"></Image>
+                  <Image src={galang} alt="" className=" relative rounded-t-full border-4 border-[#d6b064] mx-auto"></Image>
                 </div>
               </AnimatedComponent>
               <AnimatedComponent initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }}>
@@ -377,10 +377,10 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
                     <Image src={br} alt="" className="absolute -right-10 h-20 w-auto"></Image>
                   </div>
                   <div className=" relative z-100 ">
-                    <div className="text-4xl font-custom">Akad Nikah</div>
+                    <div className="text-4xl font-custom mb-5">Akad Nikah</div>
                     <div>Sabtu, 19 April 2025</div>
-                    <div className="my-3">Pukul 09.00 WIB</div>
-                    <div className="font-bold">KUA Cipinang, Jakarta timur</div>
+                    <div className="">Pukul 09.00 WIB</div>
+                    <div className="font-bold mt-2">KUA Cipinang, Jakarta timur</div>
                     <div className="mt-5">
                       <a className="pl-2 pr-4 py-2 text-sm shadow-lg flex bg-[#d6b064] items-center w-max mx-auto rounded-full hover:scale-110 transition-all" href="https://maps.app.goo.gl/FJ6GJ2NZstnXrWrn6" target="_blank">
                         <span>
@@ -411,10 +411,10 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
                     <Image src={bl} alt="" className="absolute -left-10 h-20 w-auto"></Image>
                   </div>
                   <div className=" relative z-100">
-                    <div className="text-4xl font-custom ">Resepsi</div>
+                    <div className="text-4xl font-custom mb-5">Resepsi</div>
                     <div>Sabtu, 19 April 2025</div>
-                    <div className="my-3">Pukul 11.00 WIB</div>
-                    <div className="font-bold">Gedung Serbaguna, Bekasi Timur</div>
+                    <div className="">Pukul 11.00 WIB</div>
+                    <div className="font-bold mt-2">Gedung Serbaguna, Bekasi Timur</div>
                     <div className="mt-5">
                       <a className="pl-2 pr-4 py-2 text-sm shadow-lg flex bg-[#d6b064] items-center w-max mx-auto rounded-full hover:scale-110 transition-all" href="https://maps.app.goo.gl/FJ6GJ2NZstnXrWrn6" target="_blank">
                         <span>
