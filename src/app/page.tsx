@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <AudioProvider>
-      <div className="block x:hidden">
+      <div className="block sm:hidden">
         {/* Undangan container di atas dengan posisi absolute */}
         <UndanganContainer onOpenInvitation={handleOpenInvitation} />
         {/* Halaman utama di bawah */}

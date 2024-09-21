@@ -12,6 +12,7 @@ import layer3s from "../../../public/images/layer-3s.png";
 import layer4s from "../../../public/images/layer-4s.png";
 import layer5s from "../../../public/images/layer-5s.png";
 import { useAudio } from "./AudioContext";
+import bgcard from "../../../public/images/bg-card.png";
 
 const getQueryParam = (name: string) => {
   if (typeof window !== "undefined") {
@@ -54,8 +55,9 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
         initial="hidden"
         animate={isOpen ? "exit" : "hidden"} // Trigger animasi saat button diklik
         variants={containerVariants}
-        className="bg-couple inset-0 min-h-screen bg-[#0a0a0a] fixed z-[1000] overflow-hidden"
+        className="inset-0 min-h-screen bg-[#0a0a0a] fixed z-[1000] overflow-hidden"
       >
+        <Image src={bgcard} alt="bg" className=" absolute opacity-50 mx-auto translate-x-1/2 right-1/2 bottom-0"></Image>
         <div className="transform scale-y-[-1]">
           <motion.div
             initial={{ opacity: 0, y: 100, x: 100 }} // Mulai dari atas dan dengan opacity 0
