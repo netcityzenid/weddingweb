@@ -93,13 +93,13 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
           </motion.div>
         </div>
 
-        <div className=" absolute text-white text-center right-1/2 bottom-[200px] translate-x-1/2">
+        <div className=" absolute text-white text-center right-1/2 bottom-36 translate-x-1/2">
           <motion.div className="" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
             <div className="text-sm mb-2">Kepada Bapak/Ibu/Saudara/i</div>
             <div className="font-semibold">{guestName || "Nama Tamu"}</div>
           </motion.div>
         </div>
-        <div className="absolute rounded-full bottom-[140px] right-1/2 translate-x-1/2 justify-center mx-auto flex gap-2 text-black  transition duration-300 overflow-hidden z-[1000]">
+        <div className="absolute rounded-full bottom-24 right-1/2 translate-x-1/2 justify-center mx-auto flex gap-2 text-black  transition duration-300 overflow-hidden z-[1000]">
           <motion.button initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }} onClick={handleOpenInvitation} className="py-1.5 px-4 border-2 rounded-full bg-gradient-to-b from-[#d6b064] to-[#a78541] shadow-lg ">
             {/* SVG Icon */}
             <div className="flex gap-1">
