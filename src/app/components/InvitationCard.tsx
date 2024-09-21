@@ -38,7 +38,7 @@ const UndanganContainer = ({ onOpenInvitation }: UndanganContainerProps) => {
   // Variants untuk animasi keluar undangan container
   const containerVariants = {
     hidden: { y: 0, opacity: 1 }, // Posisi awal
-    exit: { y: -1000, opacity: 1, transition: { duration: 2 } }, // Naik ke atas dan menghilang
+    exit: { y: -1500, opacity: 1, transition: { duration: 2 } }, // Naik ke atas dan menghilang
   };
 
   const handleOpenInvitation = () => {
