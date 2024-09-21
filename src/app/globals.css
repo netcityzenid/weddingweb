@@ -230,7 +230,7 @@ body {
   background-image: url("/images/bg-card.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   pointer-events: none; /* Ensure the background doesn't interfere with interactions */
   opacity: 0.5;
 }
