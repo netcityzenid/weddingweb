@@ -11,7 +11,7 @@ export const metadata = {
     site: "@galangalrizky",
     title: "Afni & Galang Wedding",
     description: "Saturday, April 19th 2025",
-    image: "https://weddingweb-beta.vercel.app/images/couple-1.jpg",
+    image: "https://weddingweb-beta.vercel.app/images/cover.jpeg",
   },
   openGraph: {
     locale: "id_ID",
@@ -20,12 +20,12 @@ export const metadata = {
     description: "Saturday, April 19th 2025",
     url: "https://weddingweb-beta.vercel.app/",
     image: {
-      url: "https://weddingweb-beta.vercel.app/images/couple-1.jpg",
-      secure_url: "https://weddingweb-beta.vercel.app/images/couple-1.jpg",
+      url: "https://weddingweb-beta.vercel.app/images/cover.jpeg",
+      secure_url: "https://weddingweb-beta.vercel.app/images/cover.jpeg",
       width: 1000,
       height: 1500,
       alt: "The wedding of Afni & Galang",
-      type: "image/jpg",
+      type: "image/jpeg",
     },
     article: {
       section: "Uncategorized",
