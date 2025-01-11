@@ -89,7 +89,7 @@ const SwipeCard: React.FC = () => {
             }}
             onTouchStart={handleTouchStart}
             onTouchEnd={() => handleTouchEnd(card.url)}
-          ></div>
+          ></div> 
         </TinderCard>
       ))}
 
