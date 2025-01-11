@@ -7,8 +7,6 @@ import galang from "../../../public/images/galang.jpg";
 import hand from "../../../public/images/hand.png";
 import bl from "../../../public/images/BL.png";
 import br from "../../../public/images/BR.png";
-import goldleaf from "../../../public/images/goldleaf.png";
-import FallingLeaves from "./FallingLeaf";
 import im1 from "../../../public/images/im1.jpg";
 import couple from "../../../public/images/couple-1.jpg";
 import FormData from "./FromData";
@@ -47,7 +45,7 @@ interface AnimatedComponentProps {
 
 const AnimatedComponent: React.FC<AnimatedComponentProps> = ({
   children,
-  initial = { opacity: 0, y: 100 }, // Default value
+  initial = { opacity: 1, y: 100 }, // Default value
   animate,
   transition,
 }) => {
@@ -132,96 +130,55 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
       <AnimatePresence>
         <div className=" overflow-hidden bg-pattern relative max-w-[640px] mx-auto">
           <MusicButton />
-          <div id="section-1" className="w-full h-full bg-pattern bg-[#f0f0f0] relative">
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 3 }} className="">
-              <Image src={goldleaf} alt="" className="absolute bottom-[300px] -left-20 opacity z-[51] h-32 w-auto transform scale-x-[-1] "></Image>
-              <Image src={goldleaf} alt="" className="absolute bottom-[300px] -left-20 opacity z-[50] h-32 w-auto transform scale-x-[-1] blur-lg"></Image>
-            </motion.div>
-            <AnimatedComponent initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
-              <div className="z-[1000] relative">
-                <Image src={goldleaf} alt="" className="absolute -bottom-10 -right-1/2  w-auto  opacity-20 "></Image>
-                <Image src={goldleaf} alt="" className="absolute top-[0] -right-16 opacity z-[51] h-32 w-auto"></Image>
-                <Image src={goldleaf} alt="" className="absolute top-[0] -right-16 opacity-80 z-[50] h-32 w-auto blur-lg"></Image>
-              </div>
-            </AnimatedComponent>
-
+          <div id="section-1" className="w-full h-full bg-pattern bg-[#e4e4e4] relative ">
             <div className=" relative overflow-hidden">
-              <FallingLeaves />
-              <motion.div initial={{ y: -1000 }} animate={{ y: 0 }} transition={{ duration: 2, delay: 1 }} className="flex">
-                <Image src={im1} alt="couple" className=" rounded-b-[100px] border-b-4 border-[#d6b064] -mt-40"></Image>
+              <motion.div initial={{ y: -1000 }} animate={{ y: 0 }} transition={{ duration: 2, delay: 0 }} className="flex">
+                <Image src={im1} alt="couple" className="  -mt-40"></Image>
               </motion.div>
-            </div>
-            <div className="text-white px-5 relative z-[50] pb-20">
-              <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1, delay: 1 }}>
-                <AnimatedComponent initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
-                  <div className="text-center  uppercase text-[#d6b064] mt-5">The wedding of</div>
-                  <div className="font-custom text-center text-5xl mt-5 text-[#d6b064] leading-none">
-                    Afni
-                    <span className="px-2">&</span>
-                    Galang
-                  </div>
-                  <div className="text-center mt-5 bg-[#d6b064] w-max px-4 py-1 rounded-full  text-sm text-[#f0f0f0] items-center flex mx-auto justify-center">
-                    <span>
-                      <svg className="h-4 w-auto mr-1" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                          {" "}
-                          <path
-                            d="M20 10V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V10M20 10V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V10M20 10H4M8 3V7M16 3V7"
-                            stroke="#f0f0f0"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                          ></path>{" "}
-                          <rect x="6" y="12" width="3" height="3" rx="0.5" fill="#f0f0f0"></rect> <rect x="10.5" y="12" width="3" height="3" rx="0.5" fill="#f0f0f0"></rect>{" "}
-                          <rect x="15" y="12" width="3" height="3" rx="0.5" fill="#f0f0f0"></rect>{" "}
-                        </g>
-                      </svg>
-                    </span>
-                    <span>Sabtu, 19 April 2025</span>
-                  </div>
-                </AnimatedComponent>
-              </motion.div>
-            </div>
-            <div className=" relative -mb-1">
-              <Image src={sectiongold} alt="" className="  absolute bottom-0 scale-1.10 z-50"></Image>
-            </div>
-            <>
-              <div className=" backdrop-filter backdrop-blur-sm bg-[#d6b064] pb-10 p-5">
-                <AnimatedComponent initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
-                  <div className="flex justify-center">
-                    <svg fill="#ffffff" width="64px" height="64px" viewBox="0 0 512 512" version="1.1" stroke="#ffffff">
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                      <g id="SVGRepo_iconCarrier">
-                        {" "}
-                        <g id="bird_love-bird-heart-love-valentine">
-                          {" "}
-                          <path d="M210.239,161.63c-11.85-11.979-13.889-31.229-3.614-44.605c12.414-16.161,35.529-17.243,49.375-3.245 c13.847-13.998,36.961-12.917,49.375,3.245c10.275,13.376,8.235,32.626-3.614,44.605l-32.5,32.855 c-7.318,7.398-19.204,7.398-26.522,0L210.239,161.63z M130.272,174.126c3.14,3.22,8.315,3.22,11.455,0l19.952-20.46 c7.017-7.196,8.387-18.749,2.104-26.593c-7.145-8.922-20.021-9.403-27.784-1.442c-7.763-7.96-20.64-7.479-27.784,1.442 c-6.283,7.845-4.913,19.397,2.104,26.593L130.272,174.126z M370.272,174.126c3.14,3.22,8.315,3.22,11.455,0l19.952-20.46 c7.017-7.196,8.387-18.749,2.104-26.593c-7.145-8.922-20.021-9.403-27.784-1.442c-7.763-7.96-20.64-7.479-27.784,1.442 c-6.283,7.845-4.913,19.397,2.104,26.593L370.272,174.126z M468.72,408h-31.44c-8.48,0-16.64-3.36-22.64-9.36L408,392 c-36.56,25.04-85.76,20.48-117.12-10.88C259.52,349.76,254.96,300.56,280,264c-2.96-7.92-4-16.24-3.12-24.32 c0-0.006,0.002-0.012,0.003-0.018L256,223.966l28.838-7.175l-0.109,0.315c6.446-10.327,16.483-18.683,29.512-22.866 c12.96-4.16,27.44-2.96,39.52,3.28c25.653,13.224,35.246,42.292,25.851,66.778l84.366,84.366 c4.609,4.605,5.969,11.469,3.477,17.484c-2.099,5.073-6.62,8.462-11.878,9.426l18.745,18.745C479.36,399.36,475.84,408,468.72,408z M320,232c0-4.4-3.6-8-8-8s-8,3.6-8,8s3.6,8,8,8S320,236.4,320,232z M452.789,359.996L376,283.309l-11.547,11.547 c-6.68,6.688-10.344,15.59-10.313,25.063c0.031,9.484,3.766,18.371,10.516,25.027c4.609,4.551,10.711,7.055,17.188,7.055h14.844 l-26.344-26.344c-3.125-3.125-3.125-8.188,0-11.313s8.188-3.125,11.313,0l39.779,39.702c4.418,3.835,10.037,5.955,15.846,5.955 L452.789,359.996z M227.162,216.791L256,223.966l-20.883,15.696c0,0.006,0.002,0.012,0.003,0.018c0.88,8.08-0.16,16.4-3.12,24.32 c25.04,36.56,20.48,85.76-10.88,117.12C189.76,412.48,140.56,417.04,104,392l-6.64,6.64c-6,6-14.16,9.36-22.64,9.36H43.28 c-7.12,0-10.64-8.64-5.6-13.68l18.745-18.745c-5.257-0.965-9.78-4.354-11.882-9.426c-2.492-6.016-1.125-12.879,3.48-17.484 l84.366-84.366c-9.395-24.487,0.198-53.555,25.851-66.778c12.08-6.24,26.56-7.44,39.52-3.28 c13.028,4.183,23.066,12.539,29.512,22.866L227.162,216.791z M157.859,319.914c0.031-9.473-3.633-18.371-10.316-25.059L136,283.313 l-76.664,76.664L74.719,360c5.838,0,11.493-2.135,15.916-6.006l0.615-0.584l39.094-39.066c3.125-3.125,8.188-3.125,11.313,0 s3.125,8.188,0,11.313L115.279,352h14.881c6.469,0,12.57-2.504,17.184-7.055C154.094,338.289,157.828,329.398,157.859,319.914z M208,232c0-4.4-3.6-8-8-8s-8,3.6-8,8s3.6,8,8,8S208,236.4,208,232z"></path>{" "}
-                        </g>{" "}
-                        <g id="Layer_1"></g>{" "}
-                      </g>
-                    </svg>
-                  </div>
-                  <div className=" uppercase text-center mb-5 text-[#f0f0f0]">Menuju Hari Bahagia</div>
-                </AnimatedComponent>
-                <AnimatedComponent initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
-                  <CountdownTimer targetDate={targetDate} />
-                </AnimatedComponent>
-                <AnimatedComponent initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
-                  <div className="bg-[#f0f0f0]  rounded-full text-center mt-5  py-2 px-6 mx-auto text-sm text-[#d6b064] font-semibold flex w-max mb-10">Save the Date</div>
-                </AnimatedComponent>
-              </div>
-            </>
-          </div>
+              <div className="text-white px-5 relative z-[50] pb-20 -mt-40 ">
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1, delay: 2 }}>
+                  <AnimatedComponent initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
+                    <div className="text-center uppercase text-[#fff] mt-5" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
+                      The wedding of
+                    </div>
+                    <div className="font-custom text-center text-5xl mt-5 text-[#fff] leading-none" style={{ textShadow: "0px 0px 10px rgba(0, 0, 0, 1)" }}>
+                      Afni
+                      <span className="px-2">&</span>
+                      Galang
+                    </div>
+                    <div className="text-center mt-5 bg-[#fff] w-max px-4 py-1 rounded-full  text-sm text-[#0a0a0a] items-center flex mx-auto justify-center ">
+                      <span className=" opacity-65">
+                        <svg className="h-4 w-auto mr-1" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                          <g id="SVGRepo_iconCarrier">
+                            {" "}
+                            <path
+                              d="M20 10V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V10M20 10V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V10M20 10H4M8 3V7M16 3V7"
+                              stroke="#0a0a0a"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                            ></path>{" "}
+                            <rect x="6" y="12" width="3" height="3" rx="0.5" fill="#0a0a0a"></rect> <rect x="10.5" y="12" width="3" height="3" rx="0.5" fill="#f0f0f0"></rect>{" "}
+                            <rect x="15" y="12" width="3" height="3" rx="0.5" fill="#0a0a0a"></rect>{" "}
+                          </g>
+                        </svg>
+                      </span>
+                      <span className=" opacity-65">Sabtu, 19 April 2025</span>
+                    </div>
 
-          <div className="  relative">
-            <Image src={sectionblack} alt="" className=" absolute -bottom-1 z-10"></Image>
+                    <motion.div className="mt-10" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1, delay: 3 }}>
+                      <CountdownTimer targetDate={targetDate} />
+                    </motion.div>
+                  </AnimatedComponent>
+                </motion.div>
+              </div>
+            </div>
           </div>
-          <section id="section2" className=" bg-pattern bg-[#0a0a0a] px-5 pb-32 pt-20 relative">
+          <section id="section2" className=" bg-pattern bg-[#0a0a0a] px-5 pb-32 pt-20 relative z-100">
             <AnimatedComponent initial={{ x: -100 }} animate={{ x: 0 }} transition={{ duration: 1 }}>
               <div className="rotating">
-                <Image src={flower} alt="flower" className=" absolute -top-20 h-32 w-auto -left-20 transform scale-x-[-1]"></Image>
+                <Image src={flower} alt="flower" className=" absolute -top-40 h-32 w-auto -left-20 transform scale-x-[-1]"></Image>
               </div>
             </AnimatedComponent>
             <AnimatedComponent initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }}>
