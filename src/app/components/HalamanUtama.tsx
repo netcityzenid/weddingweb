@@ -133,20 +133,12 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
           <div id="section-1" className="w-full h-full bg-pattern bg-[#e4e4e4] relative ">
             <div className=" relative overflow-hidden">
               <motion.div initial={{ y: -1000 }} animate={{ y: 0 }} transition={{ duration: 2, delay: 0 }} className="flex">
-                <Image src={im1} alt="couple" className="  -mt-40"></Image>
+                <Image src={im1} alt="couple" className=" "></Image>
               </motion.div>
-              <div className="text-white px-5 relative z-[50] pb-20 -mt-40 ">
+              <div className="text-white px-5 relative z-[50] pb-20 -mt-9">
                 <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1, delay: 2 }}>
                   <AnimatedComponent initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
-                    <div className="text-center uppercase text-[#fff] mt-5" style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
-                      The wedding of
-                    </div>
-                    <div className="font-custom text-center text-5xl mt-5 text-[#fff] leading-none" style={{ textShadow: "0px 0px 10px rgba(0, 0, 0, 1)" }}>
-                      Afni
-                      <span className="px-2">&</span>
-                      Galang
-                    </div>
-                    <div className="text-center mt-5 bg-[#fff] w-max px-4 py-1 rounded-full  text-sm text-[#0a0a0a] items-center flex mx-auto justify-center ">
+                    <div className="text-center mt-5 bg-[#d6b064] w-max px-4 py-1 rounded-full  text-sm text-[#fff] items-center flex mx-auto justify-center ">
                       <span className=" opacity-65">
                         <svg className="h-4 w-auto mr-1" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -155,19 +147,19 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
                             {" "}
                             <path
                               d="M20 10V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V10M20 10V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V10M20 10H4M8 3V7M16 3V7"
-                              stroke="#0a0a0a"
+                              stroke="#fff"
                               stroke-width="2"
                               stroke-linecap="round"
                             ></path>{" "}
-                            <rect x="6" y="12" width="3" height="3" rx="0.5" fill="#0a0a0a"></rect> <rect x="10.5" y="12" width="3" height="3" rx="0.5" fill="#f0f0f0"></rect>{" "}
-                            <rect x="15" y="12" width="3" height="3" rx="0.5" fill="#0a0a0a"></rect>{" "}
+                            <rect x="6" y="12" width="3" height="3" rx="0.5" fill="#fff"></rect> <rect x="10.5" y="12" width="3" height="3" rx="0.5" fill="#f0f0f0"></rect>{" "}
+                            <rect x="15" y="12" width="3" height="3" rx="0.5" fill="#fff"></rect>{" "}
                           </g>
                         </svg>
                       </span>
-                      <span className=" opacity-65">Sabtu, 19 April 2025</span>
+                      <span className="">Sabtu, 19 April 2025</span>
                     </div>
 
-                    <motion.div className="mt-10" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1, delay: 3 }}>
+                    <motion.div className="mt-5" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1, delay: 3 }}>
                       <CountdownTimer targetDate={targetDate} />
                     </motion.div>
                   </AnimatedComponent>

@@ -1,4 +1,3 @@
-// src/components/CountdownTimer.tsx
 "use client"; // untuk mendukung penggunaan useEffect
 
 import { useEffect, useState } from "react";
@@ -12,18 +11,26 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     const difference = new Date(targetDate).getTime() - new Date().getTime();
 
     let timeLeft = {
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
+      Hari: "00",
+      Jam: "00",
+      Menit: "00",
+      Detik: "00",
     };
 
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        Hari: Math.floor(difference / (1000 * 60 * 60 * 24))
+          .toString()
+          .padStart(2, "0"),
+        Jam: Math.floor((difference / (1000 * 60 * 60)) % 24)
+          .toString()
+          .padStart(2, "0"),
+        Menit: Math.floor((difference / 1000 / 60) % 60)
+          .toString()
+          .padStart(2, "0"),
+        Detik: Math.floor((difference / 1000) % 60)
+          .toString()
+          .padStart(2, "0"),
       };
     }
 
@@ -41,31 +48,13 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   }, [timeLeft]);
 
   return (
-    <div className="countdown-timer flex justify-center text-center mx-auto opacity-65 font-sans ">
-      <div className="  text-[#0a0a0a] items-center justify-center text-center px-4 block py-   rounded-xl">
-        <div className="bg-red-">
-          <span className="items-start text-3xl flex font-semibold text-center justify-center     text-[#0a0a0a]">{timeLeft.days}</span>
-          <span className="text-sm items-center bg-green- flex justify-center">Hari</span>
+    <div className="countdown-timer flex justify-center text-center mx-auto  font-sans gap-4">
+      {Object.entries(timeLeft).map(([label, value]) => (
+        <div key={label} className="text-[#d6b064] flex flex-col items-center justify-center px-3 py-2 rounded-xl bg-[#fff] min-w-16">
+          <span className="text-xl font-semibold">{value}</span>
+          <span className="text-xs capitalize">{label}</span>
         </div>
-      </div>
-      <div className="  text-[#0a0a0a] items-center justify-center text-center px-4 block py-   rounded-xl">
-        <div className="bg-red-">
-          <span className="items-start text-3xl flex font-semibold text-center justify-center     text-[#0a0a0a]">{timeLeft.hours}</span>
-          <span className="text-sm items-center bg-green- flex justify-center">Jam</span>
-        </div>
-      </div>
-      <div className="  text-[#0a0a0a] items-center justify-center text-center px-4 block py-   rounded-xl">
-        <div className="bg-red-">
-          <span className="items-start text-3xl flex font-semibold text-center justify-center     text-[#0a0a0a]">{timeLeft.minutes}</span>
-          <span className="text-sm items-center bg-green- flex justify-center">Menit</span>
-        </div>
-      </div>
-      <div className="  text-[#0a0a0a] items-center justify-center text-center px-4 block py-   rounded-xl">
-        <div className="bg-red-">
-          <span className="items-start text-3xl flex font-semibold text-center justify-center     text-[#0a0a0a]">{timeLeft.seconds}</span>
-          <span className="text-sm items-center bg-green- flex justify-center">Detik</span>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
