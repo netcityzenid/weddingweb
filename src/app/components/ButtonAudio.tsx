@@ -21,7 +21,7 @@ const MusicButton = () => {
                   fill="#d6b064"
                 ></path>{" "}
               </g>
-            </svg>
+            </svg> 
           </div>
         ) : (
           <div>
