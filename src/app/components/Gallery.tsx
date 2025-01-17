@@ -34,16 +34,17 @@ interface AnimatedComponentProps {
   transition?: { duration: number }; // Tipe untuk transition
 }
 
-const AnimatedComponent: React.FC<AnimatedComponentProps> = ({
-  children,
-  initial,
-  animate,
-  transition,
-}) => {
+const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, initial = { opacity: 0, y: 100 }, animate = { opacity: 1, y: 0 }, transition = { duration: 0.5 } }) => {
+  const [hasAnimated, setHasAnimated] = useState(false); // Track if animation has started
   const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: false,
+    rootMargin: "-20% 0px", // Trigger when the element is at the center of the screen
+    triggerOnce: false, // Keep observing for changes
   });
+
+  // Start animation when the element enters the center of the screen
+  if (inView && !hasAnimated) {
+    setHasAnimated(true);
+  }
 
   return (
     <motion.div ref={ref} initial={initial} animate={inView ? animate : initial} transition={transition} className="mt-2">

@@ -15,9 +15,6 @@ import permata from "../../../public/images/permata.png";
 import bca from "../../../public/images/BCA.svg";
 import lines from "../../../public/images/lines.png";
 import im12 from "../../../public/images/im12.jpg";
-import sectionwhite from "../../../public/images/section-white.png";
-import sectiongold from "../../../public/images/section-gold.png";
-import sectionblack from "../../../public/images/section-black.png";
 import MusicButton from "./ButtonAudio";
 import ImageGallery from "./Gallery";
 import flower from "../../../public/images/flower.png";
@@ -43,16 +40,17 @@ interface AnimatedComponentProps {
   transition?: { duration: number }; // Tipe untuk transition
 }
 
-const AnimatedComponent: React.FC<AnimatedComponentProps> = ({
-  children,
-  initial = { opacity: 1, y: 100 }, // Default value
-  animate,
-  transition,
-}) => {
+const AnimatedComponent: React.FC<AnimatedComponentProps> = ({ children, initial = { opacity: 0, y: 100 }, animate = { opacity: 1, y: 0 }, transition = { duration: 0.5 } }) => {
+  const [hasAnimated, setHasAnimated] = useState(false); // Track if animation has started
   const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: false,
+    rootMargin: "-20% 0px", // Trigger when the element is at the center of the screen
+    triggerOnce: false, // Keep observing for changes
   });
+
+  // Start animation when the element enters the center of the screen
+  if (inView && !hasAnimated) {
+    setHasAnimated(true);
+  }
 
   return (
     <motion.div ref={ref} initial={initial} animate={inView ? animate : initial} transition={transition} className="">
@@ -184,7 +182,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             <div className="w-full text-white text-center mt-4">
               <AnimatedComponent initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }}>
                 <div className="px-14 pt-10">
-                  <Image src={afni} alt="" className=" relative rounded-t-full border-4 border-[#d6b064] mx-auto"></Image>
+                  <Image src={afni} alt="" className=" relative rounded-t-full border-2 border-[#d6b064] mx-auto w-1/2"></Image>
                 </div>
               </AnimatedComponent>
               <AnimatedComponent initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }}>
@@ -241,7 +239,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             <div className="w-full text-white text-center mt-4">
               <AnimatedComponent initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }}>
                 <div className="px-14 pt-10">
-                  <Image src={galang} alt="" className=" relative rounded-t-full border-4 border-[#d6b064] mx-auto"></Image>
+                  <Image src={galang} alt="" className=" relative rounded-t-full border-2 border-[#d6b064] mx-auto w-1/2"></Image>
                 </div>
               </AnimatedComponent>
               <AnimatedComponent initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }}>
@@ -302,11 +300,6 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
               <Image src={flower} alt="flower" className=" absolute bottom-[0px] h-20 w-auto -left-10 rotate-animation5"></Image>
             </div>
           </AnimatedComponent>
-
-          <div className=" relative  -mb-1">
-            <Image src={sectionwhite} alt="" className="  absolute bottom-0 scale-1.10 z-10"></Image>
-            <Image src={sectiongold} alt="" className="  absolute bottom-0 scale-1.10 "></Image>
-          </div>
           <div id="section-2" className=" bg-pattern bg-[#f0f0f0] pt-20 text-center pb-72 relative">
             <AnimatedComponent initial={{ x: 100 }} animate={{ x: 0 }} transition={{ duration: 1 }}>
               <div className="rotating">
@@ -329,9 +322,9 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
                     <div className="text-4xl font-custom mb-5">Akad Nikah</div>
                     <div>Sabtu, 19 April 2025</div>
                     <div className="">Pukul 09.00 WIB</div>
-                    <div className="font-bold mt-2">KUA Cipinang, Jakarta timur</div>
+                    <div className="font-bold mt-5">Gedung Serbaguna Komplek PP. PUPR Pengairan Bekasi</div>
                     <div className="mt-5">
-                      <a className="pl-2 pr-4 py-2 text-sm shadow-lg flex bg-[#d6b064] items-center w-max mx-auto rounded-full hover:scale-110 transition-all" href="https://maps.app.goo.gl/FJ6GJ2NZstnXrWrn6" target="_blank">
+                      <a className="pl-2 pr-4 py-2 text-sm shadow-lg flex  border-2 border-[#d6b064] items-center w-max mx-auto rounded-full hover:scale-110 transition-all" href="https://maps.app.goo.gl/FJ6GJ2NZstnXrWrn6" target="_blank">
                         <span>
                           <svg className="h-4 w-auto mr-2" width="64px" height="64px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -361,11 +354,13 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
                   </div>
                   <div className=" relative z-100">
                     <div className="text-4xl font-custom mb-5">Resepsi</div>
-                    <div>Sabtu, 19 April 2025</div>
-                    <div className="">Pukul 11.00 WIB</div>
-                    <div className="font-bold mt-2">Gedung Serbaguna, Bekasi Timur</div>
+                    <div className="">
+                      <div>Sabtu, 19 April 2025</div>
+                      <div className="">Pukul 11.00 - 15.00 WIB</div>
+                    </div>
+                    <div className="font-bold mt-5">Gedung Serbaguna Komplek PP. PUPR Pengairan Bekasi</div>
                     <div className="mt-5">
-                      <a className="pl-2 pr-4 py-2 text-sm shadow-lg flex bg-[#d6b064] items-center w-max mx-auto rounded-full hover:scale-110 transition-all" href="https://maps.app.goo.gl/FJ6GJ2NZstnXrWrn6" target="_blank">
+                      <a className="pl-2 pr-4 py-2 text-sm shadow-lg flex  border-2 border-[#d6b064] items-center w-max mx-auto rounded-full hover:scale-110 transition-all" href="https://maps.app.goo.gl/FJ6GJ2NZstnXrWrn6" target="_blank">
                         <span>
                           <svg className="h-4 w-auto mr-2" width="64px" height="64px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -388,14 +383,10 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
               </AnimatedComponent>
             </div>
             <AnimatedComponent initial={{ scale: 2 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
-              <Image src={hand} alt="" className="  absolute bottom-0 scale-1.10 pb-32"></Image>
+              <Image src={hand} alt="" className="  absolute bottom-0 scale-1.10 pb-32 opacity-25 "></Image>
             </AnimatedComponent>
           </div>
 
-          <div className=" relative  -mb-1">
-            <Image src={sectionblack} alt="" className=" absolute bottom-0 z-10"></Image>
-            <Image src={sectiongold} alt="" className=" absolute bottom-0 "></Image>
-          </div>
           <div id="section-3" className="  bg-[#0a0a0a] pt-2  px-5 pb-40 ">
             <AnimatedComponent initial={{ x: -100, y: -100 }} animate={{ x: 0, y: 0 }} transition={{ duration: 1 }}>
               <div className="rotating">
@@ -403,7 +394,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
               </div>
             </AnimatedComponent>
             <AnimatedComponent initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
-              <div className="text-white text-center mt-20 flex justify-center mb-5">
+              <div className="text-white text-center mt-10 flex justify-center mb-10">
                 <p className="text-5xl font-custom text-[#d6b064]"> Our Gallery</p>
               </div>
             </AnimatedComponent>
@@ -425,10 +416,6 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             </AnimatedComponent>
           </div>
 
-          <div className=" relative  -mb-1">
-            <Image src={sectionwhite} alt="" className="  absolute bottom-0 scale-1.10 z-10"></Image>
-            <Image src={sectiongold} alt="" className="  absolute bottom-0 scale-1.10 "></Image>
-          </div>
           <div id="section-4" className="   h-full bg-[#f0f0f0] pt-20 pb-20">
             <AnimatedComponent initial={{ x: 100, y: -100 }} animate={{ x: 0, y: 0 }} transition={{ duration: 1 }}>
               <div className="rotating">
@@ -451,10 +438,6 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             </AnimatedComponent>
           </div>
 
-          <div className=" relative -mb-1">
-            <Image src={sectionblack} alt="" className=" absolute bottom-0 z-10"></Image>
-            <Image src={sectiongold} alt="" className=" absolute bottom-0 "></Image>
-          </div>
           <div id="section-5" className="pb-32 text-[#f0f0f0] bg-[#0a0a0a] py-20 px-5">
             <AnimatedComponent initial={{ scale: 0.5 }} animate={{ scale: 1 }} transition={{ duration: 1 }}>
               <div className="text-5xl font-custom text-center text-[#d6b064] relative z-1">Give a Gift</div>
@@ -612,10 +595,6 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             </AnimatedComponent>
           </div>
 
-          <div className="pt-0 relative -mb-1">
-            <Image src={sectionwhite} alt="" className="  absolute bottom-0 scale-1.10 z-10"></Image>
-            <Image src={sectiongold} alt="" className="  absolute bottom-0 scale-1.10 "></Image>
-          </div>
           <div id="section-6" className="bg-[#f0f0f0] pt-20 overflow-hidden relative">
             <motion.div initial={{ x: 100 }} animate={{ x: 0 }} transition={{ duration: 1 }}>
               <div className="relative">
