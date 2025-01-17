@@ -182,7 +182,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             <div className="w-full text-white text-center mt-4">
               <AnimatedComponent initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }}>
                 <div className="px-14 pt-10">
-                  <Image src={afni} alt="" className=" relative rounded-t-full border-2 border-[#d6b064] mx-auto w-1/2"></Image>
+                  <Image src={afni} alt="" className=" relative rounded-t-full border-2 border-[#d6b064] mx-auto w-2/3"></Image>
                 </div>
               </AnimatedComponent>
               <AnimatedComponent initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }}>
@@ -239,7 +239,7 @@ const HalamanUtama: React.FC<HalamanUtamaProps> = ({ className }) => {
             <div className="w-full text-white text-center mt-4">
               <AnimatedComponent initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }}>
                 <div className="px-14 pt-10">
-                  <Image src={galang} alt="" className=" relative rounded-t-full border-2 border-[#d6b064] mx-auto w-1/2"></Image>
+                  <Image src={galang} alt="" className=" relative rounded-t-full border-2 border-[#d6b064] mx-auto w-2/3"></Image>
                 </div>
               </AnimatedComponent>
               <AnimatedComponent initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }}>
